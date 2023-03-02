@@ -1,14 +1,20 @@
 import client from '../client';
 import { PortableText } from '@portabletext/react';
 
+import Heading from '@/components/Heading';
+import Layout from '@/components/Layout';
+
 export default function Home({ data }) {
 
   const { body, title } = data;
 
   return (
     <>
-      <h1>{title}</h1>
-      <PortableText value={body} />
+      <Layout>
+        {/* <h1>{title}</h1>
+        <PortableText value={body} /> */}
+        <Heading size='h1'>Hello!</Heading>
+      </Layout>
     </>
   )
 };
