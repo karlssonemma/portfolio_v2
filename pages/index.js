@@ -1,22 +1,25 @@
 import client from '../client';
+import { PortableText } from '@portabletext/react';
 
-export default function Home({ project }) {
+export default function Home({ data }) {
 
-  console.log('about', project)
+  const { body, title } = data;
+
   return (
     <>
-      <p>Jello</p>
+      <h1>{title}</h1>
+      <PortableText value={body} />
     </>
   )
 };
 
 export async function getStaticProps() {
-  const project = await client.fetch(`
-  *[_type == "about"]`);
+  const data = await client.fetch(`
+  *[_type == "landingPage"][0]`);
 
 return {
   props: {
-      project
+      data
   }
 }
 

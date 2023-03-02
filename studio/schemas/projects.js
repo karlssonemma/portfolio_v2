@@ -1,30 +1,80 @@
 import {defineField, defineType} from 'sanity';
 
 export default defineType({
-    name: 'projects',
     title: 'Projects',
+    name: 'projects',
     type: 'document',
     fields: [
         defineField({
-            name: 'title',
             title: 'Title',
+            name: 'title',
             type: 'string'
         }),
         defineField({
-            name: 'caption',
             title: 'Caption',
+            name: 'caption',
             type: 'string'
         }),
         defineField({
-            name: 'slug',
-            title: 'Slug',
-            type: 'string',
+            title: 'Body',
+            name: 'body',
+            type: 'richText'
+        }),
+        // defineField({
+        //     name: 'slug',
+        //     title: 'Slug',
+        //     type: 'string',
+        // }),
+        defineField({
+            title: 'Live Link',
+            name: 'projectLink',
+            type: 'url',
         }),
         defineField({
-            name: 'gallery',
+            title: 'Github Link',
+            name: 'githubLink',
+            type: 'url',
+        }),
+        // not sure if neccessary with fieldsets here? coming back.
+        // defineField({
+        //     name: 'websiteLinks',
+        //     type: 'object',
+        //     fieldsets: [
+        //         {
+        //             name: 'links', 
+        //             title: 'Website Links',
+        //             options: {
+        //                 collapsable: true
+        //             }
+        //         }
+        //     ],
+        //     fields: [
+        //         {
+        //             title: 'Live Link',
+        //             name: 'liveLink',
+        //             type: 'url',
+        //             fieldset: 'links'
+        //         },
+        //         {
+        //             title: 'Github Link',
+        //             name: 'githubLink',
+        //             type: 'url',
+        //             fieldset: 'links'
+        //         },
+        //     ]
+        // }),
+        defineField({
             title: 'Gallery',
+            name: 'gallery',
             type: 'array',
-            of: [{type: 'projectImage'}]
-        }), 
+            of: [{type: 'imageBlock'}]
+        }),
+        defineField({
+            title: 'Tags',
+            name: 'tags',
+            type: 'array',
+            of: [{type: 'string'}]
+        })
+        
     ]
 })

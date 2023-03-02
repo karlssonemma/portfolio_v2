@@ -1,5 +1,5 @@
 export default {
-    name: 'projectImage',
+    name: 'imageBlock',
     type: 'image',
     title: 'Project Image',
     fields: [

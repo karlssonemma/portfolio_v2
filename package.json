@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^2.0.2",
     "@sanity/client": "^5.2.2",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",

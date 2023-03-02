@@ -1,9 +1,16 @@
-import about from './about';
+import aboutPage from './aboutPage';
+import contactPage from './contactPage';
+import landingPage from './landingPage';
+
 import projects from './projects';
-import projectImage from './projectImage';
+import imageBlock from './imageBlock';
+import richText from './richText';
 
 export const schemaTypes = [
-    about,
+    aboutPage,
+    contactPage,
+    landingPage,
     projects,
-    projectImage
+    imageBlock,
+    richText,
 ]
