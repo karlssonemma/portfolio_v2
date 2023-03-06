@@ -11,9 +11,10 @@ export default function Home({ data }) {
   return (
     <>
       <Layout>
-        {/* <h1>{title}</h1>
-        <PortableText value={body} /> */}
-        <Heading size='h1'>Hello!</Heading>
+        <section>
+          <Heading size='h1'>{title}</Heading>
+          <PortableText value={body} />
+        </section>
       </Layout>
     </>
   )

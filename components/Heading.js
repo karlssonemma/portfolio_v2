@@ -2,16 +2,28 @@
 
 function Heading({ size, children }) {
 
+    const DEFAULT_CLASSES = 'tracking-tighter';
+
     switch (size) {
         case 'h1':
             return (
-                <h1 className='m-32'>{children}</h1>
+                <h1 className={`
+                    ${DEFAULT_CLASSES} 
+                    text-7xl
+                `}>
+                    {children}
+                </h1>
             );
             break;
         case 'h2':
         default:
             return (
-                <h2>{children}</h2>
+                <h2 className={`
+                    ${DEFAULT_CLASSES} 
+                    text-6xl
+                `}>
+                    {children}
+                </h2>
             );
     }
 }
