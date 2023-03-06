@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react';
 import Heading from '@/components/Heading';
 import Layout from '@/components/Layout';
 
-export default function Home({ data }) {
+export default function About({ data }) {
 
   const { body, title } = data;
 
@@ -22,7 +22,7 @@ export default function Home({ data }) {
 
 export async function getStaticProps() {
   const data = await client.fetch(`
-  *[_type == "landingPage"][0]`);
+  *[_type == "aboutPage"][0]`);
 
   return {
     props: {

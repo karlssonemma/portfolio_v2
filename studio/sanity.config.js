@@ -2,10 +2,10 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import { HomeIcon, UserIcon, EnvelopeIcon, EllipsisHorizontalIcon, SunIcon } from '@sanity/icons'
+import { HomeIcon, UserIcon, EnvelopeIcon, EllipsisHorizontalIcon, SunIcon, PresentationIcon } from '@sanity/icons'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
-const singletonTypes = new Set(['landingPage', 'aboutPage', 'contactPage']);
+const singletonTypes = new Set(['landingPage', 'aboutPage', 'contactPage', 'projectsPage']);
 
 
 export default defineConfig({
@@ -38,6 +38,15 @@ export default defineConfig({
                 .schemaType('aboutPage')
                 .documentId('aboutPage')
             ),
+          S.listItem()
+          .title('Projects Page')
+          .id('projectsPage')
+          .icon(PresentationIcon)
+          .child(
+            S.document()
+              .schemaType('projectsPage')
+              .documentId('projectsPage')
+          ),
           S.listItem()
             .title('Contact Page')
             .id('contactPage')

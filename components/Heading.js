@@ -1,5 +1,4 @@
 
-
 function Heading({ size, children }) {
 
     const DEFAULT_CLASSES = 'tracking-tighter';
