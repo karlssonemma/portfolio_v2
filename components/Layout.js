@@ -1,9 +1,18 @@
+import Navigation from './Navigation';
+
 function Layout({ children }) {
 
     return(
-        <main className='bg-blue-400'>
-            {children}
-        </main>
+        <>
+            <header className='w-full absolute top-0 left-0 bg-white flex justify-between'>
+                <p>Logo</p>
+                <Navigation />
+            </header>
+            <main className='bg-teal flex flex-col md:flex-row'>
+                {children}
+                <p>hej</p>
+            </main>
+        </>
     )
 }
 
