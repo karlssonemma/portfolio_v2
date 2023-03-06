@@ -15,11 +15,11 @@ export default function Projects({ data }) {
   return (
     <>
       <Layout>
-        <section>
+        <section className='flex flex-col md:w-2/5 bg-white'>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} />
         </section>
-        <section>
+        <section className='flex flex-col md:w-3/5 bg-white'>
           {slugs.map(slug => 
             <Link href={`projects/${slug._id}`}>{slug.title}</Link>
           )}

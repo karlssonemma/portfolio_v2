@@ -18,9 +18,11 @@ function Layout({ children }) {
             </header>
             <main className={`
                 bg-teal 
-                min-h-screen 
+                min-h-screen
+                min-w-screen
                 flex justify-center items-center
                 flex-col md:flex-row 
+                gap-12
                 ${px}
             `}>
                 {children}
