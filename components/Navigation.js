@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Caption from './Caption';
 
 export default function Navigation() {
 
@@ -14,7 +15,9 @@ export default function Navigation() {
 const NavLink = ({ children, href }) => {
     return(
         <Link href={href} className='ml-2'>
-            {children}
+            <Caption>
+                {children}
+            </Caption>
         </Link>
     )
 };

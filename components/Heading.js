@@ -1,7 +1,7 @@
 
 function Heading({ size, children }) {
 
-    const DEFAULT_CLASSES = 'tracking-tighter';
+    const DEFAULT_CLASSES = 'font-medium';
 
     switch (size) {
         case 'h1':

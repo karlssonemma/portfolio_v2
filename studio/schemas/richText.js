@@ -9,6 +9,7 @@ export default {
             styles: [
                 { title: 'Body', value: 'normal' },
                 { title: 'Subtitle', value: 'h4' },
+                { title: 'Big Text', value: 'h2' },
             ],
             marks: {
                 decorators: [
