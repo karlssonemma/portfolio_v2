@@ -6,7 +6,7 @@ import Heading from '@/components/Heading';
 import Caption from '@/components/Caption';
 import Text from '@/components/Text';
 
-// import Image from 'next/image';
+import Image from 'next/image';
 
 export default function About({ data }) {
 
@@ -23,12 +23,12 @@ export default function About({ data }) {
           <PortableText value={body} components={components} />
         </section>
         <section>
-          {/* <Image 
+          <Image 
             src={image.url}
             width={400}
             height={400}
             alt={image.altText}
-          /> */}
+          />
         </section>
       </Layout>
     </>
