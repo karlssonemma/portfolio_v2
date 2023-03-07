@@ -7,6 +7,8 @@ import Caption from '@/components/Caption';
 import Text from '@/components/Text';
 import ImageComp from '@/components/ImageComp';
 
+import CONTAINER_STYLES from '@/components/Container';
+
 export default function About({ data }) {
 
   const { body, title, image } = data;
@@ -17,11 +19,11 @@ export default function About({ data }) {
   return (
     <>
       <Layout>
-        <section className='md:w-2/5 min-h-screen flex flex-col items-start'>
+        <section className={`${CONTAINER_STYLES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} components={components} />
         </section>
-        <section className='w-full md:w-3/5 min-h-screen flex items-start'>
+        <section className={`${CONTAINER_STYLES} md:w-3/5`}>
           <ImageComp data={image} />
         </section>
       </Layout>

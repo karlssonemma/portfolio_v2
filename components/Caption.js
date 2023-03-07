@@ -8,6 +8,7 @@ export default function Caption({ children }) {
             uppercase 
             inline
             tracking-widest
+            mb-1
         '>
             {children}
         </p>

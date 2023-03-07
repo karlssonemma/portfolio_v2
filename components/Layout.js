@@ -21,7 +21,7 @@ function Layout({ children }) {
                 <Navigation />
             </header>
             <main className={`
-                bg-teal
+                bg-white
                 relative top-${headerHeight}
                 min-h-screen
                 min-w-screen
@@ -29,7 +29,7 @@ function Layout({ children }) {
                 flex-col md:flex-row 
                 gap-32
                 ${px}
-                pt-24
+                py-24
             `}>
                 {children}
             </main>

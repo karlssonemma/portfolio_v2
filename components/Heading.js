@@ -1,12 +1,14 @@
 
-function Heading({ size, children }) {
+function Heading({ size, children, as }) {
 
     const DEFAULT_CLASSES = 'font-medium mb-5';
 
     switch (size) {
         case 'h1':
             return (
-                <h1 className={`
+                <h1 
+                    as={as}
+                    className={`
                     ${DEFAULT_CLASSES} 
                     text-7xl
                 `}>
@@ -17,7 +19,9 @@ function Heading({ size, children }) {
         case 'h2':
         default:
             return (
-                <h2 className={`
+                <h2 
+                    as={as}
+                    className={`
                     ${DEFAULT_CLASSES} 
                     text-6xl
                 `}>
