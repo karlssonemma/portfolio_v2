@@ -5,8 +5,7 @@ import Layout from '@/components/Layout';
 import Heading from '@/components/Heading';
 import Caption from '@/components/Caption';
 import Text from '@/components/Text';
-
-import Image from 'next/image';
+import ImageComp from '@/components/ImageComp';
 
 export default function About({ data }) {
 
@@ -18,17 +17,12 @@ export default function About({ data }) {
   return (
     <>
       <Layout>
-        <section>
+        <section className='md:w-2/5 min-h-screen flex flex-col items-start'>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} components={components} />
         </section>
-        <section>
-          <Image 
-            src={image.url}
-            width={400}
-            height={400}
-            alt={image.altText}
-          />
+        <section className='w-full md:w-3/5 min-h-screen flex items-start'>
+          <ImageComp data={image} />
         </section>
       </Layout>
     </>

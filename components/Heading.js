@@ -1,7 +1,7 @@
 
 function Heading({ size, children }) {
 
-    const DEFAULT_CLASSES = 'font-medium';
+    const DEFAULT_CLASSES = 'font-medium mb-5';
 
     switch (size) {
         case 'h1':
