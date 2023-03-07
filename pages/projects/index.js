@@ -19,11 +19,14 @@ export default function Projects({ data }) {
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} />
         </section>
-        <section className='flex flex-col md:w-3/5 bg-white'>
-          {slugs.map(slug => 
-            <Link href={`projects/${slug._id}`}>{slug.title}</Link>
+        <ul className='flex flex-col md:w-3/5 bg-white'>
+          {slugs.map(slug => (
+            <li key={slug._id}>
+              <Link href={`projects/${slug._id}`}>{slug.title}</Link>
+            </li>
+          )
           )}
-        </section>
+        </ul>
       </Layout>
     </>
   )

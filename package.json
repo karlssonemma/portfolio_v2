@@ -11,9 +11,11 @@
   "dependencies": {
     "@portabletext/react": "^2.0.2",
     "@sanity/client": "^5.2.2",
+    "@sanity/image-url": "^1.0.2",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",
     "next": "13.2.1",
+    "npm-check-updates": "^16.7.10",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

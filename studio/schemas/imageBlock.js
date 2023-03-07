@@ -6,7 +6,8 @@ export default {
         {
             name: 'altText',
             type: 'string', 
-            title: 'altText'
+            title: 'Alternative text',
+            validation: Rule => Rule.required()
         },
     ]
 } 

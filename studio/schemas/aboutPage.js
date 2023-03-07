@@ -1,3 +1,5 @@
+import imageBlock from './imageBlock';
+
 export default {
     name: 'aboutPage',
     type: 'document',
@@ -13,6 +15,12 @@ export default {
             name: 'body',
             type: 'richText',
             title: 'Body'
-        }
+        },
+        {
+            name: 'image',
+            type: 'imageBlock',
+            title: 'Image'
+        },
+
     ]
 }
