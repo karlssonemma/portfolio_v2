@@ -16,7 +16,7 @@ function Layout({ children }) {
                 relative ${top}
                 min-h-screen
                 min-w-screen
-                flex justify-center items-center
+                flex justify-center items-center md:items-start
                 flex-col md:flex-row 
                 gap-32
                 ${px}

@@ -1,8 +1,10 @@
 import Caption from '@/components/Caption';
 import CONTAINER_STYLES from '@/components/Container';
 import Heading from '@/components/Heading';
+import ImageComp from '@/components/ImageComp';
 import Layout from '@/components/Layout';
 import SkillTag from '@/components/SkillTag';
+import ImageBlock from '@/studio/schemas/imageBlock';
 import { PortableText } from '@portabletext/react';
 
 import { useRouter } from 'next/router';
@@ -35,15 +37,17 @@ export default function ProjectsPage({ data, hasError }) {
     return(
         <Layout>
             <section className={`${CONTAINER_STYLES}`}>
-                <Heading size='h2'>{title}</Heading>
+                <Heading size='h1'>{title}</Heading>
                 <Caption>{caption}</Caption>
-                <PortableText value={body} />
-                <article className='py-5'>
-                    {tags.map(tag => <SkillTag>{tag}</SkillTag>)}
+                <div className='my-7'>
+                    <PortableText value={body} />
+                </div>
+                <article className='py-5 flex flex-wrap w-3/5'>
+                    {tags?.map(tag => <SkillTag>{tag}</SkillTag>)}
                 </article>
             </section>
-            <section className={`${CONTAINER_STYLES}`}>
-                
+            <section className='w-1/2 relative top-0 right-0'>
+                {gallery?.map(img => <ImageComp data={img} />)}
             </section>
         </Layout>
     )
@@ -56,7 +60,11 @@ export async function getStaticProps(context) {
         title,
         body,
         caption,
-        gallery,
+        gallery[]{
+            _key,
+            altText,
+            'url': asset->url
+        },
         githubLink,
         projectLink,
         tags,

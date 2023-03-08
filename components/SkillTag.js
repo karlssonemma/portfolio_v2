@@ -4,11 +4,15 @@ export default function SkillTag({ children }) {
     return(
         <p className='
             w-max
-            p-5
-            m-5 
+            py-3
+            px-6
+            mr-5
+            mb-5 
             bg-teal 
-            font-sans 
-            rounded-3xl
+            font-mono
+            text-sm
+            font-light 
+            rounded-[30px]
         '>
             {children}
         </p>

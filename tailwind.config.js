@@ -10,7 +10,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['General Sans', 'sans-serif']
+      sans: ['General Sans', 'sans-serif'],
+      mono: ['DM Mono', 'monospace']
     },
     colors: {
       white: '#F8F8F8',
