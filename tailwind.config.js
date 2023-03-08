@@ -13,9 +13,10 @@ module.exports = {
       sans: ['General Sans', 'sans-serif']
     },
     colors: {
-      'white': '#F8F8F8',
-      'black': '#161616',
-      'teal': '#008080',
+      white: '#F8F8F8',
+      black: '#161616',
+      teal: '#008080',
+      transparent: 'transparent'
     },
     extend: {},
   },

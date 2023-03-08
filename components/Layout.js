@@ -1,28 +1,19 @@
+import Caption from './Caption';
 import Navigation from './Navigation';
+
+
+let px = 'px-8 lg:px-32'
+let headerHeight = 'h-24';
+let top = 'top-24';
 
 function Layout({ children }) {
 
-
-    const px = 'px-4 lg:px-32'
-    const headerHeight = '16';
-
     return(
         <>
-            <header className={`
-                bg-white 
-                h-${headerHeight}
-                w-full 
-                fixed top-0 left-0 
-                flex justify-between items-center 
-                z-10
-                ${px}
-            `}>
-                <p>Logo</p>
-                <Navigation />
-            </header>
+            <Header />
             <main className={`
                 bg-white
-                relative top-${headerHeight}
+                relative ${top}
                 min-h-screen
                 min-w-screen
                 flex justify-center items-center
@@ -34,6 +25,25 @@ function Layout({ children }) {
                 {children}
             </main>
         </>
+    )
+};
+
+const Header = () => {
+
+
+    return(
+        <header className={`
+                bg-gradient-to-b from-white to-transparent
+                ${headerHeight}
+                w-full 
+                fixed top-0 left-0 
+                flex justify-between items-center 
+                z-10
+                ${px}
+            `}>
+            <Caption>Emma Karlsson</Caption>
+            <Navigation />
+        </header>
     )
 }
 
