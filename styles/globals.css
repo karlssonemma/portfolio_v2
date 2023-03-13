@@ -8,3 +8,14 @@
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+main, header {
+    padding: 0 2rem 0 2rem;   
+}
+
+/* 1024px = tailwind md screen value */
+@media screen and (min-width: 1024px) {
+    main, header {
+        padding: 0 8rem 0 8rem;
+    }
+}

@@ -4,7 +4,7 @@ import Caption from './Caption';
 export default function Navigation() {
 
     return(
-        <nav className=''>
+        <nav className='flex flex-col lg:flex-row'>
             <NavLink href='/about'>About</NavLink>
             <NavLink href='/projects'>Projects</NavLink>
             <NavLink href='/contact'>Contact</NavLink>

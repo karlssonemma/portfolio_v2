@@ -1,5 +1,4 @@
-import Caption from './Caption';
-import Navigation from './Navigation';
+import Header from './Header';
 
 
 let px = 'px-8 lg:px-32'
@@ -10,7 +9,10 @@ function Layout({ children }) {
 
     return(
         <>
-            <Header />
+            <Header 
+                height={headerHeight}
+                px={px}
+            />
             <main className={`
                 bg-white
                 relative ${top}
@@ -20,7 +22,6 @@ function Layout({ children }) {
                 flex justify-center items-center md:items-start
                 flex-col md:flex-row 
                 gap-32
-                ${px}
                 py-24
             `}>
                 {children}
@@ -29,21 +30,5 @@ function Layout({ children }) {
     )
 };
 
-const Header = () => {
-    return(
-        <header className={`
-                bg-gradient-to-b from-white to-transparent
-                ${headerHeight}
-                w-full 
-                fixed top-0 left-0 
-                flex justify-between items-center 
-                z-10
-                ${px}
-            `}>
-            <Caption>Emma Karlsson</Caption>
-            <Navigation />
-        </header>
-    )
-}
 
 export default Layout;
