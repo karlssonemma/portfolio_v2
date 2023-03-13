@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react';
 
 import Heading from '@/components/Heading';
 import Layout from '@/components/Layout';
+import CONTAINER_STYLES from '@/components/Container';
 
 export default function Contact({ data }) {
 
@@ -11,7 +12,7 @@ export default function Contact({ data }) {
   return (
     <>
       <Layout>
-        <section>
+        <section className={`${CONTAINER_STYLES}`}>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} />
         </section>

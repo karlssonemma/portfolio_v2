@@ -1,5 +1,6 @@
 import Caption from '@/components/Caption';
 import CONTAINER_STYLES from '@/components/Container';
+import Gallery from '@/components/Gallery';
 import Heading from '@/components/Heading';
 import ImageComp from '@/components/ImageComp';
 import Layout from '@/components/Layout';
@@ -36,19 +37,19 @@ export default function ProjectsPage({ data, hasError }) {
 
     return(
         <Layout>
-            <section className={`${CONTAINER_STYLES}`}>
+            <section className={`${CONTAINER_STYLES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <Caption>{caption}</Caption>
                 <div className='my-7'>
                     <PortableText value={body} />
                 </div>
-                <article className='py-5 flex flex-wrap w-3/5'>
-                    {tags?.map(tag => <SkillTag>{tag}</SkillTag>)}
+                <article className='py-5 flex flex-wrap w-4/5'>
+                    {
+                        tags?.map(tag => <SkillTag>{tag}</SkillTag>)
+                    }
                 </article>
             </section>
-            <section className='w-1/2 relative top-0 right-0'>
-                {gallery?.map(img => <ImageComp data={img} />)}
-            </section>
+            <Gallery data={gallery} />
         </Layout>
     )
 };

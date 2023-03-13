@@ -3,8 +3,8 @@ import Navigation from './Navigation';
 
 
 let px = 'px-8 lg:px-32'
-let headerHeight = 'h-24';
-let top = 'top-24';
+let headerHeight = 'h-16';
+let top = 'top-16';
 
 function Layout({ children }) {
 
@@ -16,6 +16,7 @@ function Layout({ children }) {
                 relative ${top}
                 min-h-screen
                 min-w-screen
+                h-max-content
                 flex justify-center items-center md:items-start
                 flex-col md:flex-row 
                 gap-32
@@ -29,8 +30,6 @@ function Layout({ children }) {
 };
 
 const Header = () => {
-
-
     return(
         <header className={`
                 bg-gradient-to-b from-white to-transparent
