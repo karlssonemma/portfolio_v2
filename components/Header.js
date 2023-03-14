@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Navigation from './Navigation';
 import Caption from './Caption';
+import Drawer from './Drawer';
 
 const DEFAULT_STYLES = 'bg-gradient-to-b from-white to-transparent w-full fixed top-0 left-0 justify-between items-center z-10';
 
@@ -19,18 +20,14 @@ const Header = ({ height }) => {
 
     return(
         <>
-        <Drawer 
-            isOpen={isOpen}
-        />
-        <DesktopHeader 
-            height={height}
-        />
-        <MobileHeader 
-            height={height}
-            // openDrawer={openDrawer}
-            // closeDrawer={closeDrawer}
-            setOpenDrawer={setOpenDrawer}
-        />
+            <Drawer isOpen={isOpen} closeDrawer={closeDrawer} />
+            <DesktopHeader height={height} />
+            <MobileHeader 
+                height={height}
+                // openDrawer={openDrawer}
+                // closeDrawer={closeDrawer}
+                setOpenDrawer={setOpenDrawer}
+            />
         </>
     )
 };
@@ -48,19 +45,8 @@ const MobileHeader = ({ height, setOpenDrawer }) => {
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.mobile}`}>
             <Caption>Emma Karlsson</Caption>
-            <button onClick={() => setOpenDrawer((previous) => !previous)}>menu</button>
+            <button onClick={() => setOpenDrawer((prev) => !prev)}>menu</button>
         </header>
-    )
-};
-
-const Drawer = ({ isOpen }) => {
-
-    const open = isOpen ? '' : '-translate-x-full';
-
-    return(
-        <div className={`w-4/5 h-screen bg-teal absolute transition ease-in-out duration-500 z-20 ${open}`}>
-            <Navigation />
-        </div>
     )
 };
 
