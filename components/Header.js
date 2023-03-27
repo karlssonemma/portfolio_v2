@@ -7,8 +7,8 @@ import Drawer from './Drawer';
 const DEFAULT_STYLES = 'bg-gradient-to-b from-white to-transparent w-full fixed top-0 left-0 justify-between items-center z-10';
 
 const VARIANT_STYLES = {
-    mobile: 'flex lg:hidden',
-    desktop: 'hidden lg:flex'
+    mobile: 'flex md:hidden',
+    desktop: 'hidden md:flex'
 }
 
 const Header = ({ height }) => {
