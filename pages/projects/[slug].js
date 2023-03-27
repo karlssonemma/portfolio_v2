@@ -9,9 +9,10 @@ import ImageBlock from '@/studio/schemas/imageBlock';
 import { PortableText } from '@portabletext/react';
 
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import client from '../../client';
 
-export default function ProjectsPage({ data, hasError }) {
+export default function ProjectsPage({ data, hasError, context }) {
 
     const { 
         title,
@@ -22,10 +23,12 @@ export default function ProjectsPage({ data, hasError }) {
         projectLink,
         tags,
         _id
-    } = data;
+    } = data.data;
 
-    console.log('DATA', data)
+    const slugs = data.slugs;
+
     const router = useRouter();
+    console.log('DATA', slugs)
 
     if (hasError) {
         return <h1>Error</h1>
@@ -48,28 +51,56 @@ export default function ProjectsPage({ data, hasError }) {
                         tags?.map(tag => <SkillTag>{tag}</SkillTag>)
                     }
                 </article>
+                <NextLink slugs={slugs} currentId={_id} />
             </section>
             <Gallery data={gallery} />
         </Layout>
     )
 };
 
+const NextLink = ({ slugs, currentId }) => {
+
+    let newSlug;
+    let lastIndex = slugs.length - 1;
+    let currentPageIndex = slugs.findIndex((slug) => slug._id === currentId)
+
+    if (currentPageIndex == lastIndex) {
+        newSlug = slugs[0]._id;
+    } else {
+        let i = currentPageIndex + 1;
+        newSlug = slugs[i]._id;
+    }
+
+    console.log('length', currentPageIndex)
+
+    return(
+        <Link href={`/projects/${newSlug}`}>Next</Link>
+    )
+}
+
 export async function getStaticProps(context) {
 
     const id = context.params.slug;
-    const data = await client.fetch(`*[_id == '${id}'][0]{
-        title,
-        body,
-        caption,
-        gallery[]{
-            _key,
-            altText,
-            'url': asset->url
+    const data = await client.fetch(`{
+        'data': *[_id == '${id}'][0]{
+            title,
+            body,
+            caption,
+            gallery[]{
+                _key,
+                altText,
+                'url': asset->url
+            },
+            githubLink,
+            projectLink,
+            tags,
+            _id
         },
-        githubLink,
-        projectLink,
-        tags,
-        _id
+        'slugs':  *[_type == 'projects']{
+            title,
+            caption,
+            _id,
+        }
     }`);
   
     if (!data) {
@@ -93,6 +124,6 @@ export async function getStaticPaths() {
     
     return {
         paths: pathsWithParams,
-        fallback: true
+        fallback: true,
     }
 };

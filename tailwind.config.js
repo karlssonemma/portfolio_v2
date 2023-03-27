@@ -22,7 +22,11 @@ module.exports = {
       teal: '#008080',
       transparent: 'transparent'
     },
-    extend: {},
+    extend: {
+      spacing: {
+        'mobile': '2rem'
+      }
+    },
   },
   plugins: [],
 }

@@ -6,9 +6,10 @@ export default function Navigation() {
     return(
         <nav className='
                 flex flex-col md:flex-row 
-                justify-between md:items-center items-start
+                justify-between items-start md:items-center
                 w-full h-full 
-                pl-2 
+                pl-2
+                
         '>
             <div className='flex flex-col md:flex-row'>
                 <NavLink href='/about'>About</NavLink>
@@ -24,7 +25,7 @@ export default function Navigation() {
 
 const NavLink = ({ children, href }) => {
     return(
-        <Link href={href} className='pr-4'>
+        <Link href={href} className='pr-4 mb-4 md:mb-0'>
             <Caption>
                 {children}
             </Caption>
