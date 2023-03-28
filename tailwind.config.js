@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
 
 const path = require('path');
 
@@ -17,16 +18,17 @@ module.exports = {
       mono: ['DM Mono', 'monospace'],
       serif: ['Dela Gothic One', 'serif']
     },
-    colors: {
-      white: '#F8F8F8',
-      black: '#161616',
-      teal: '#008080',
-      transparent: 'transparent'
-    },
     extend: {
       spacing: {
         'mobile': '2rem'
-      }
+      },
+      colors: {
+        white: '#F8F8F8',
+        black: '#161616',
+        teal: '#008080',
+        blue: '#103900',
+        transparent: 'transparent'
+      },
     },
   },
   plugins: [],

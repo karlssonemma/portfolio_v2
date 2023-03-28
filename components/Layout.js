@@ -6,7 +6,7 @@ let px = 'px-8 lg:px-32'
 let headerHeight = 'h-16';
 let top = 'top-16';
 
-function Layout({ children, path }) {
+function Layout({ children, bgColor }) {
 
     return(
         <>
@@ -16,15 +16,16 @@ function Layout({ children, path }) {
             />
             <AnimatedFrame>
                 <main className={`
-                    bg-white
-                    relative ${top}
-                    min-h-[calc(100vh-4rem)]
+                    ${bgColor}
+                    absolute top-0 left-0 right-0
+                    min-h-screen
                     min-w-screen
                     flex
                     flex-col md:flex-row 
                     justify-between
                     gap-32
-                    py-24
+                    pt-44
+                    pb-12
                 `}>
                     {children}
                 </main>
@@ -39,7 +40,7 @@ const AnimatedFrame = ({ children }) => {
             className='absolute top-0 left-0 w-full h-full'
             initial={{ y: '100%' }}
             animate={{ y: '0%' }}
-            transition={{ duration: 0.75, ease: 'easeOut' }}
+            transition={{ duration: 0.75, ease: 'easeInOut' }}
             exit={{ opacity: 1 }}
         >
             {children}

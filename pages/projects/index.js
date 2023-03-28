@@ -18,7 +18,7 @@ export default function Projects({ data }) {
 
   return (
     <>
-      <Layout>
+      <Layout bgColor='bg-lime-600'>
         <section className={`${CONTAINER_STYLES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <div className='overflow-hidden'>
