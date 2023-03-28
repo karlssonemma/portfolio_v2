@@ -11,7 +11,7 @@ export default function Home({ data }) {
   return (
     <>
       <Layout>
-        <section>
+        <section className='mx-0 my-auto w-full text-center'>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} />
         </section>

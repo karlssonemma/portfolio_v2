@@ -23,7 +23,7 @@ export default function ProjectsPage({ data, hasError, context }) {
         projectLink,
         tags,
         _id
-    } = data.data;
+    } = data.project;
 
     const slugs = data.slugs;
 
@@ -51,30 +51,29 @@ export default function ProjectsPage({ data, hasError, context }) {
                         tags?.map(tag => <SkillTag>{tag}</SkillTag>)
                     }
                 </article>
-                <NextLink slugs={slugs} currentId={_id} />
+                <NextLink slugs={slugs} currentSlug={_id} />
             </section>
             <Gallery data={gallery} />
         </Layout>
     )
 };
 
-const NextLink = ({ slugs, currentId }) => {
+const NextLink = ({ slugs, currentSlug }) => {
 
-    let newSlug;
-    let lastIndex = slugs.length - 1;
-    let currentPageIndex = slugs.findIndex((slug) => slug._id === currentId)
+    let nextProject;
+    let currentProjectIndex = slugs.findIndex((slug) => slug._id === currentSlug)
 
-    if (currentPageIndex == lastIndex) {
-        newSlug = slugs[0]._id;
+    if (currentProjectIndex == (slugs.length - 1)) {
+        nextProject = slugs[0];
     } else {
-        let i = currentPageIndex + 1;
-        newSlug = slugs[i]._id;
+        let i = currentProjectIndex + 1;
+        nextProject = slugs[i];
     }
 
-    console.log('length', currentPageIndex)
+    console.log('length', currentProjectIndex)
 
     return(
-        <Link href={`/projects/${newSlug}`}>Next</Link>
+        <Link href={`/projects/${nextProject._id}`}>{nextProject.title}</Link>
     )
 }
 
@@ -82,7 +81,7 @@ export async function getStaticProps(context) {
 
     const id = context.params.slug;
     const data = await client.fetch(`{
-        'data': *[_id == '${id}'][0]{
+        'project': *[_id == '${id}'][0]{
             title,
             body,
             caption,

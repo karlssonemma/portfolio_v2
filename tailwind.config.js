@@ -13,8 +13,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['General Sans', 'sans-serif'],
-      mono: ['DM Mono', 'monospace']
+      sans: ['Manrope', 'sans-serif'],
+      mono: ['DM Mono', 'monospace'],
+      serif: ['Dela Gothic One', 'serif']
     },
     colors: {
       white: '#F8F8F8',

@@ -16,10 +16,9 @@ function Layout({ children }) {
             <main className={`
                 bg-white
                 relative ${top}
-                min-h-screen
+                min-h-[calc(100vh-4rem)]
                 min-w-screen
-                h-max-content
-                flex justify-center items-center md:items-start
+                flex
                 flex-col md:flex-row 
                 gap-32
                 py-24

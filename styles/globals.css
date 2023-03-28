@@ -1,5 +1,5 @@
 /* Font imports must be placed on top */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Dela+Gothic+One&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
