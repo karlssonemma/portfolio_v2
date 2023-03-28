@@ -1,11 +1,13 @@
 import client from '../../client';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
+import { motion as m } from 'framer-motion';
 
 import Heading from '@/components/Heading';
 import Layout from '@/components/Layout';
 import Caption from '@/components/Caption';
 import CONTAINER_STYLES from '@/components/Container';
+import { container, animatedItem } from '/animation';
 
 export default function Projects({ data }) {
 
@@ -19,13 +21,26 @@ export default function Projects({ data }) {
       <Layout>
         <section className={`${CONTAINER_STYLES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
-          <PortableText value={body} />
+          <div className='overflow-hidden'>
+            <m.div
+              animate={{ y: '0%' }}
+              initial={{ y: '120%' }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
+              <PortableText value={body} />
+            </m.div>
+          </div>
         </section>
-        <ul className={`${CONTAINER_STYLES} md:w-3/5`}>
+        <m.ul 
+          className={`${CONTAINER_STYLES} md:w-2/5`} 
+          variants={container} 
+          initial='hidden' 
+          animate='show'
+        >
           {slugs.map(item => (
               <ProjectLink item={item} />
           ))}
-        </ul>
+        </m.ul>
       </Layout>
     </>
   )
@@ -33,12 +48,14 @@ export default function Projects({ data }) {
 
 const ProjectLink = ({ item }) => {
   return(
-    <li key={item._id} className='mb-12'>
-      <Link href={`projects/${item._id}`}>
-        <Heading size='h2'>{item.title}</Heading>
-        <Caption>{item.caption}</Caption>
-      </Link>
-    </li>
+    <div className='overflow-hidden'>
+      <m.li key={item._id} className='mb-12' variants={animatedItem}>
+        <Link href={`projects/${item._id}`}>
+          <Heading size='h2'>{item.title}</Heading>
+          <Caption>{item.caption}</Caption>
+        </Link>
+      </m.li>
+    </div>
   );
 };
 

@@ -1,3 +1,5 @@
+import { motion as m } from 'framer-motion';
+
 
 function Heading({ size, children, as }) {
 
@@ -6,14 +8,17 @@ function Heading({ size, children, as }) {
     switch (size) {
         case 'h1':
             return (
-                <h1 
-                    as={as}
-                    className={`
-                    ${DEFAULT_CLASSES} 
-                    text-7xl
-                `}>
-                    {children}
-                </h1>
+                <div className='overflow-hidden'>
+                    <m.h1 
+                        as={as}
+                        className={`${DEFAULT_CLASSES} text-7xl`}
+                        animate={{ y: '0%' }}
+                        initial={{ y: '120%' }}
+                        transition={{ delay: 0.5, duration: 0.5 }}
+                    >
+                        {children}
+                    </m.h1>
+                </div>
             );
             break;
         case 'h2':
@@ -21,10 +26,8 @@ function Heading({ size, children, as }) {
             return (
                 <h2 
                     as={as}
-                    className={`
-                    ${DEFAULT_CLASSES} 
-                    text-6xl
-                `}>
+                    className={`${DEFAULT_CLASSES} text-6xl`}
+                >
                     {children}
                 </h2>
             );

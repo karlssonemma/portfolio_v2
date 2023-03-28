@@ -39,7 +39,7 @@ export default function ProjectsPage({ data, hasError, context }) {
     }
 
     return(
-        <Layout>
+        <Layout path={_id}>
             <section className={`${CONTAINER_STYLES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <Caption>{caption}</Caption>
