@@ -1,3 +1,4 @@
+import { slideUp } from '@/animation';
 import { motion as m } from 'framer-motion';
 
 
@@ -12,9 +13,9 @@ function Heading({ size, children, as }) {
                     <m.h1 
                         as={as}
                         className={`${DEFAULT_CLASSES} text-7xl`}
-                        animate={{ y: '0%' }}
-                        initial={{ y: '120%' }}
-                        transition={{ delay: 0.5, duration: 0.5 }}
+                        variants={slideUp}
+                        animate='visible'
+                        initial='hidden'
                     >
                         {children}
                     </m.h1>

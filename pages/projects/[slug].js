@@ -11,6 +11,8 @@ import { PortableText } from '@portabletext/react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import client from '../../client';
+import { motion as m } from 'framer-motion';
+import { scaleUp } from '@/animation';
 
 export default function ProjectsPage({ data, hasError, context }) {
 
@@ -39,7 +41,7 @@ export default function ProjectsPage({ data, hasError, context }) {
     }
 
     return(
-        <Layout path={_id}>
+        <Layout bgColor='bg-[#E9EDC9]'>
             <section className={`${CONTAINER_STYLES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <Caption>{caption}</Caption>

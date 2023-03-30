@@ -1,6 +1,9 @@
 import CONTAINER_STYLES from './Container'
 import ImageComp from './ImageComp'
 
+import { motion as m } from 'framer-motion';
+import { scaleUp } from '@/animation';
+
 export default function Gallery({ data }) {
 
     return(
@@ -14,9 +17,14 @@ export default function Gallery({ data }) {
                 `}>
             <div className='md:pt-36'>
             {data?.map(img => 
-                <div className='snap-start w-full h-auto pb-10'>
+                <m.div 
+                    className='snap-start w-full h-auto pb-10'
+                    // variants={scaleUp}
+                    // animate='visible'
+                    // initial='hidden'
+                >
                     <ImageComp data={img} />
-                </div>
+                </m.div>
             )}
             </div>
         </section>

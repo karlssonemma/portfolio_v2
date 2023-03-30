@@ -8,6 +8,7 @@ import Layout from '@/components/Layout';
 import Caption from '@/components/Caption';
 import CONTAINER_STYLES from '@/components/Container';
 import { container, animatedItem } from '/animation';
+import { slideUp, blurIn } from '@/animation';
 
 export default function Projects({ data }) {
 
@@ -18,14 +19,14 @@ export default function Projects({ data }) {
 
   return (
     <>
-      <Layout bgColor='bg-lime-600'>
+      <Layout bgColor='bg-[#CCD5AE]'>
         <section className={`${CONTAINER_STYLES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <div className='overflow-hidden'>
             <m.div
-              animate={{ y: '0%' }}
-              initial={{ y: '120%' }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              variants={slideUp}
+              animate='visible'
+              initial='hidden'
             >
               <PortableText value={body} />
             </m.div>
@@ -33,9 +34,9 @@ export default function Projects({ data }) {
         </section>
         <m.ul 
           className={`${CONTAINER_STYLES} md:w-2/5`} 
-          variants={container} 
+          variants={blurIn} 
           initial='hidden' 
-          animate='show'
+          animate='visible'
         >
           {slugs.map(item => (
               <ProjectLink item={item} />
@@ -49,7 +50,7 @@ export default function Projects({ data }) {
 const ProjectLink = ({ item }) => {
   return(
     <div className='overflow-hidden'>
-      <m.li key={item._id} className='mb-12' variants={animatedItem}>
+      <m.li key={item._id} className='mb-12'>
         <Link href={`projects/${item._id}`}>
           <Heading size='h2'>{item.title}</Heading>
           <Caption>{item.caption}</Caption>

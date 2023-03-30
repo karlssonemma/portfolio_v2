@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 import Caption from './Caption';
 import Drawer from './Drawer';
 
-const DEFAULT_STYLES = 'bg-gradient-to-b from-white to-transparent w-full fixed top-0 left-0 justify-between items-center z-10';
+const DEFAULT_STYLES = 'w-full fixed top-0 left-0 justify-between items-center z-10';
 
 const VARIANT_STYLES = {
     mobile: 'flex md:hidden',

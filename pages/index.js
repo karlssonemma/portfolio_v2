@@ -10,7 +10,7 @@ export default function Home({ data }) {
 
   return (
     <>
-      <Layout>
+      <Layout bgColor='bg-[#FAEDCD]'>
         <section className='mx-0 my-auto w-full h-full text-center'>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} />

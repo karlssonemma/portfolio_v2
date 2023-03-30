@@ -1,5 +1,6 @@
 import client from '../client';
 import { PortableText } from '@portabletext/react';
+import { motion as m } from 'framer-motion';
 
 import Layout from '@/components/Layout';
 import Heading from '@/components/Heading';
@@ -8,6 +9,7 @@ import Text from '@/components/Text';
 import ImageComp from '@/components/ImageComp';
 
 import CONTAINER_STYLES from '@/components/Container';
+import { blurIn, scaleUp, slideUp } from '@/animation';
 
 export default function About({ data }) {
 
@@ -18,14 +20,21 @@ export default function About({ data }) {
 
   return (
     <>
-      <Layout bgColor='bg-green-600'>
-        <section className={`${CONTAINER_STYLES} md:w-2/5`}>
-          <Heading size='h1'>{title}</Heading>
-          <PortableText value={body} components={components} />
-        </section>
+      <Layout bgColor='bg-[#E9EDC9]'>
         <section className={`${CONTAINER_STYLES} md:w-3/5`}>
-          <ImageComp data={image} />
+          <Heading size='h1'>{title}</Heading>
+          <m.div variants={slideUp} initial='hidden' animate='visible'>
+            <PortableText value={body} components={components} />
+          </m.div>
         </section>
+          <m.section 
+            className={`${CONTAINER_STYLES} md:w-2/5`}
+            variants={scaleUp} 
+            initial='hidden' 
+            animate='visible'
+          >
+          <ImageComp data={image} />
+        </m.section>
       </Layout>
     </>
   )
