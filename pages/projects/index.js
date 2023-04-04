@@ -50,10 +50,7 @@ export default function Projects({ data }) {
 
 const ProjectLink = ({ item }) => {
   return(
-    <m.li 
-      key={item._id} 
-      className='mb-12'
-    >
+    <m.li key={item._id} className='mb-12'>
       <Link href={`projects/${item._id}`}>
         <m.h2 
           className={`${SUBTITLE_CLASSES} hover:italic`}

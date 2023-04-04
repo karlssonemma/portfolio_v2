@@ -84,7 +84,7 @@ const NextLink = ({ slugs, currentSlug }) => {
     console.log('length', currentProjectIndex)
 
     return(
-        <Link href={`/projects/${nextProject._id}`}>{nextProject.title}</Link>
+        <Link href={`/projects/${nextProject._id}`} className='font-serif text-lg tracking-wider'>{`${nextProject.title} >>`}</Link>
     )
 }
 

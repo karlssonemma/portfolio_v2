@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 import Navigation from './Navigation';
 import Caption from './Caption';
 import Drawer from './Drawer';
+import { AnimatePresence } from 'framer-motion';
 
 const DEFAULT_STYLES = 'w-full fixed top-0 left-0 justify-between items-center z-10';
 
@@ -20,7 +22,11 @@ const Header = ({ height }) => {
 
     return(
         <>
-            <Drawer isOpen={isOpen} closeDrawer={closeDrawer} />
+            <AnimatePresence>
+            {isOpen && (
+                <Drawer isOpen={isOpen} closeDrawer={closeDrawer} />
+            )}
+            </AnimatePresence>
             <DesktopHeader height={height} />
             <MobileHeader 
                 height={height}
@@ -35,7 +41,7 @@ const Header = ({ height }) => {
 const DesktopHeader = ({ height }) => {
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.desktop}`}>
-            <Caption>Emma Karlsson</Caption>
+            <Link href='/' className='font-mono text-sm min-w-max mr-8 mb-2 uppercase'>Emma Karlsson</Link>
             <Navigation />
         </header>
     )

@@ -16,6 +16,6 @@ main, header {
 /* 1024px = tailwind md screen value */
 @media screen and (min-width: 1024px) {
     main, header {
-        padding: 0 8rem 0 8rem;
+        padding: 0 4rem 0 4rem;
     }
 }

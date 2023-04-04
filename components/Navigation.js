@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Caption from './Caption';
 
-export default function Navigation() {
+export default function Navigation({ closeDrawer }) {
 
     return(
         <nav className='
@@ -12,9 +12,9 @@ export default function Navigation() {
                 
         '>
             <div className='flex flex-col md:flex-row'>
-                <NavLink href='/about'>About</NavLink>
-                <NavLink href='/projects'>Projects</NavLink>
-                <NavLink href='/contact'>Contact</NavLink>
+                <NavLink href='/about' closeDrawer={closeDrawer}>About</NavLink>
+                <NavLink href='/projects' closeDrawer={closeDrawer}>Projects</NavLink>
+                <NavLink href='/contact' closeDrawer={closeDrawer}>Contact</NavLink>
             </div>
             <a href='mailto:karlssonemma93@gmail.com'>
                 <Caption>karlssonemma93@gmail.com</Caption>
@@ -23,9 +23,9 @@ export default function Navigation() {
     )
 };
 
-const NavLink = ({ children, href }) => {
+const NavLink = ({ children, href, closeDrawer }) => {
     return(
-        <Link href={href} className='pr-4 mb-4 md:mb-0'>
+        <Link href={href} onClick={() => closeDrawer()} className='pr-4 mb-4 md:mb-0'>
             <Caption>
                 {children}
             </Caption>

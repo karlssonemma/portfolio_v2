@@ -6,9 +6,8 @@ export default function Caption({ children }) {
             font-medium
             text-xs
             uppercase 
-            inline
-            tracking-widest
-            mb-1
+            tracking-[.2em]
+            mb-2
         '>
             {children}
         </p>

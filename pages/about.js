@@ -22,7 +22,7 @@ export default function About({ data }) {
   return (
     <>
       <Layout bgColor='bg-[#E9EDC9]'>
-        <section className={`${CONTAINER_CLASSES} md:w-3/5`}>
+        <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <m.div>
             <PortableText value={body} components={components} />
