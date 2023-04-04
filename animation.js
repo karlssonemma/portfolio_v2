@@ -1,41 +1,40 @@
 export const blurIn = {
     hidden: { opacity: 0, filter: 'blur(10px)' },
-    visible: {
+    visible: (custom) => ({
         opacity: 1,
         blur: '100px',
         filter: 'blur(0px)',
         transition: {
-            delay: 0.5,
+            delay: custom * 0.2,
             ease: 'easeOut'
         }
-    }
+    })
 }
 
 export const slideUp = {
-    hidden: { y: '120%' },
-    visible: { 
+    hidden: { y: '130%' },
+    visible: (custom) => ({ 
         y: '0%',
         transition: {
-            delay: 0.7, 
-            type: 'spring',
-            stiffness: 70,
-            damping: 18
+            duration: 0.5,
+            delay: custom * 0.2,
+            ease: [0, 0.71, 0.2, 1.01]
         }
-    }
+    })
 }
 
 export const scaleUp = {
     hidden: { scale: 0 },
-    visible: { 
+    visible: (custom) => ({ 
         scale: 1,
         transition: { 
-            delay: 0.2,
+            delay: custom * 0.2,
             duration: 0.2,
             type: 'spring',
             stiffness: 140,
             damping: 20
         }
-    }
+    })
 }
 
 // export const animatedItem = {

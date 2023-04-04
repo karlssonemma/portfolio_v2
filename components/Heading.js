@@ -4,7 +4,7 @@ import { motion as m } from 'framer-motion';
 
 function Heading({ size, children, as }) {
 
-    const DEFAULT_CLASSES = 'font-medium mb-7 font-serif';
+    const DEFAULT_CLASSES = 'font-medium mb-7 font-serif h-max';
 
     switch (size) {
         case 'h1':
@@ -16,6 +16,7 @@ function Heading({ size, children, as }) {
                         variants={slideUp}
                         animate='visible'
                         initial='hidden'
+                        custom={8}
                     >
                         {children}
                     </m.h1>

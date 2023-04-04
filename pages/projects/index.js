@@ -37,6 +37,7 @@ export default function Projects({ data }) {
           variants={blurIn} 
           initial='hidden' 
           animate='visible'
+          custom={6}
         >
           {slugs.map(item => (
               <ProjectLink item={item} />

@@ -23,13 +23,14 @@ export default function About({ data }) {
       <Layout bgColor='bg-[#E9EDC9]'>
         <section className={`${CONTAINER_STYLES} md:w-3/5`}>
           <Heading size='h1'>{title}</Heading>
-          <m.div variants={slideUp} initial='hidden' animate='visible'>
+          <m.div>
             <PortableText value={body} components={components} />
           </m.div>
         </section>
           <m.section 
             className={`${CONTAINER_STYLES} md:w-2/5`}
-            variants={scaleUp} 
+            variants={scaleUp}
+            custom={5}
             initial='hidden' 
             animate='visible'
           >

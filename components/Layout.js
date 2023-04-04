@@ -38,17 +38,13 @@ const AnimatedFrame = ({ children }) => {
     return(
         <m.div 
             className='absolute top-0 left-0 w-full h-full'
-            initial={{ y: '100vh' }}
+            initial={{ y: '100%' }}
             animate={{ y: 0 }}
             transition={{ 
-                type: 'spring', 
-                damping: 18,
-                stiffness: 70,
-                // type: 'tween', 
-                // duration: 0.6,
-                // ease: [.83,.05,.78,.39]
+                duration: 1,
+                ease: [.93,.01,.59,.99]
             }}
-            exit={{ y:0 }}
+            exit={{ y: 0 }}
         >
             {children}
         </m.div>

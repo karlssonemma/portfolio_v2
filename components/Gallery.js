@@ -2,7 +2,7 @@ import CONTAINER_STYLES from './Container'
 import ImageComp from './ImageComp'
 
 import { motion as m } from 'framer-motion';
-import { scaleUp } from '@/animation';
+import { blurIn, scaleUp, slideUp } from '@/animation';
 
 export default function Gallery({ data }) {
 
@@ -19,9 +19,10 @@ export default function Gallery({ data }) {
             {data?.map(img => 
                 <m.div 
                     className='snap-start w-full h-auto pb-10'
-                    // variants={scaleUp}
-                    // animate='visible'
-                    // initial='hidden'
+                    variants={blurIn}
+                    animate='visible'
+                    initial='hidden'
+                    custom={5}
                 >
                     <ImageComp data={img} />
                 </m.div>
