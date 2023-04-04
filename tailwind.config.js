@@ -14,9 +14,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Manrope', 'sans-serif'],
+      sans: ['Dm Sans', 'sans-serif'],
       mono: ['DM Mono', 'monospace'],
-      serif: ['Dela Gothic One', 'serif']
+      serif: ['Newsreader', 'serif']
     },
     extend: {
       spacing: {

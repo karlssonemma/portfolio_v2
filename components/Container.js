@@ -1,4 +1,4 @@
 
-const CONTAINER_STYLES = 'w-full h-full flex flex-col items-start';
+const CONTAINER_CLASSES = 'w-full h-full flex flex-col items-start';
 
-export default CONTAINER_STYLES;
+export default CONTAINER_CLASSES;

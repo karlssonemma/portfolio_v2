@@ -3,10 +3,10 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 
-import Heading from '@/components/Heading';
+import Heading, { HEADER_CLASSES, SUBTITLE_CLASSES } from '@/components/Heading';
 import Layout from '@/components/Layout';
 import Caption from '@/components/Caption';
-import CONTAINER_STYLES from '@/components/Container';
+import CONTAINER_CLASSES from '@/components/Container';
 import { container, animatedItem } from '/animation';
 import { slideUp, blurIn } from '@/animation';
 
@@ -20,7 +20,7 @@ export default function Projects({ data }) {
   return (
     <>
       <Layout bgColor='bg-[#CCD5AE]'>
-        <section className={`${CONTAINER_STYLES} md:w-2/5`}>
+        <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <div className='overflow-hidden'>
             <m.div
@@ -33,7 +33,7 @@ export default function Projects({ data }) {
           </div>
         </section>
         <m.ul 
-          className={`${CONTAINER_STYLES} md:w-2/5`} 
+          className={`${CONTAINER_CLASSES} md:w-2/5`} 
           variants={blurIn} 
           initial='hidden' 
           animate='visible'
@@ -50,14 +50,22 @@ export default function Projects({ data }) {
 
 const ProjectLink = ({ item }) => {
   return(
-    <div className='overflow-hidden'>
-      <m.li key={item._id} className='mb-12'>
-        <Link href={`projects/${item._id}`}>
-          <Heading size='h2'>{item.title}</Heading>
-          <Caption>{item.caption}</Caption>
-        </Link>
-      </m.li>
-    </div>
+    <m.li 
+      key={item._id} 
+      className='mb-12'
+    >
+      <Link href={`projects/${item._id}`}>
+        <m.h2 
+          className={`${SUBTITLE_CLASSES} hover:italic`}
+          whileHover={{ x: 3 }}
+          initial={{ x: 0 }}
+          transition={{ ease: 'easeInOut', duration: .2 }}
+        >
+          {item.title}
+        </m.h2>
+        <Caption>{item.caption}</Caption>
+      </Link>
+    </m.li>
   );
 };
 

@@ -1,4 +1,4 @@
-import CONTAINER_STYLES from './Container'
+import CONTAINER_CLASSES from './Container'
 import ImageComp from './ImageComp'
 
 import { motion as m } from 'framer-motion';
@@ -8,7 +8,7 @@ export default function Gallery({ data }) {
 
     return(
         <section className={`
-                ${CONTAINER_STYLES} 
+                ${CONTAINER_CLASSES} 
                 md:w-3/5
                 md:h-screen
                 md:-translate-y-40

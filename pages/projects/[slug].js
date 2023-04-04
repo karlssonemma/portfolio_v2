@@ -1,5 +1,5 @@
 import Caption from '@/components/Caption';
-import CONTAINER_STYLES from '@/components/Container';
+import CONTAINER_CLASSES from '@/components/Container';
 import Gallery from '@/components/Gallery';
 import Heading from '@/components/Heading';
 import ImageComp from '@/components/ImageComp';
@@ -7,6 +7,7 @@ import Layout from '@/components/Layout';
 import SkillTag from '@/components/SkillTag';
 import ImageBlock from '@/studio/schemas/imageBlock';
 import { PortableText } from '@portabletext/react';
+import Text from '@/components/Text';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -42,11 +43,11 @@ export default function ProjectsPage({ data, hasError, context }) {
 
     return(
         <Layout bgColor='bg-[#E9EDC9]'>
-            <section className={`${CONTAINER_STYLES} md:w-2/5`}>
+            <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <Caption>{caption}</Caption>
                 <div className='my-7'>
-                    <PortableText value={body} />
+                    <PortableText value={body} components={components} />
                 </div>
                 <article className='py-5 flex flex-wrap w-4/5'>
                     {
@@ -59,6 +60,14 @@ export default function ProjectsPage({ data, hasError, context }) {
         </Layout>
     )
 };
+
+const components = {
+    block: {
+      normal: ({children}) => <Text>{children}</Text>,
+      h4: ({children}) => <Caption>{children}</Caption>,
+      h2: ({children}) => <Text classes='text-xl'>{children}</Text>
+    }
+  }
 
 const NextLink = ({ slugs, currentSlug }) => {
 

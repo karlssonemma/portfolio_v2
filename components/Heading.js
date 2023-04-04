@@ -1,10 +1,13 @@
 import { slideUp } from '@/animation';
 import { motion as m } from 'framer-motion';
 
+const DEFAULT_CLASSES = 'mb-7 font-serif font-light h-max';
+
+export const HEADER_CLASSES = `${DEFAULT_CLASSES} text-7xl`;
+export const SUBTITLE_CLASSES = `${DEFAULT_CLASSES} text-6xl`;
 
 function Heading({ size, children, as }) {
 
-    const DEFAULT_CLASSES = 'font-medium mb-7 font-serif h-max';
 
     switch (size) {
         case 'h1':
