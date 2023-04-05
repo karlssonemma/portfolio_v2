@@ -11,12 +11,15 @@ import ImageComp from '@/components/ImageComp';
 import CONTAINER_CLASSES from '@/components/Container';
 import { blurIn, scaleUp, slideUp } from '@/animation';
 import { HEADER_CLASSES } from '@/components/Heading';
+import { useRouter } from 'next/router';
 
 export default function About({ data }) {
 
   const { body, title, image } = data;
 
   console.log('ABOut', data)
+  const router = useRouter()
+  console.log('ROUTWR', router)
 
 
   return (

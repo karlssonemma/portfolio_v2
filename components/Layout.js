@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Header from './Header';
 import { motion as m, AnimatePresence } from 'framer-motion';
 

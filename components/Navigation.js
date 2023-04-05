@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import Caption from './Caption';
 
-export default function Navigation({ closeDrawer }) {
+export default function Navigation({ closeDrawer, isOpen }) {
+
+    const routes = [
+        { href: '/about', label: 'about' },
+        { href: '/projects', label: 'projects' },
+        { href: '/contact', label: 'contact' }
+    ];
 
     return(
         <nav className='
@@ -9,23 +15,24 @@ export default function Navigation({ closeDrawer }) {
                 justify-between items-start md:items-center
                 w-full h-full 
                 pl-2
-                
         '>
             <div className='flex flex-col md:flex-row'>
-                <NavLink href='/about' closeDrawer={closeDrawer}>About</NavLink>
-                <NavLink href='/projects' closeDrawer={closeDrawer}>Projects</NavLink>
-                <NavLink href='/contact' closeDrawer={closeDrawer}>Contact</NavLink>
+                {routes.map(route => 
+                    <NavLink href={route.href} closeDrawer={closeDrawer} isOpen={isOpen}>
+                        {route.label}
+                    </NavLink>
+                )}
             </div>
-            <a href='mailto:karlssonemma93@gmail.com'>
+            <a href='mailto:karlssonemma93@gmail.com' className=''>
                 <Caption>karlssonemma93@gmail.com</Caption>
             </a>
         </nav>
     )
 };
 
-const NavLink = ({ children, href, closeDrawer }) => {
+const NavLink = ({ children, href, closeDrawer, isOpen }) => {
     return(
-        <Link href={href} onClick={() => closeDrawer()} className='pr-4 mb-4 md:mb-0'>
+        <Link href={href} onClick={isOpen ? () => closeDrawer() : ''} className='pr-4 mb-4 md:mb-0'>
             <Caption>
                 {children}
             </Caption>

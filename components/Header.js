@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navigation from './Navigation';
 import Caption from './Caption';
 import Drawer from './Drawer';
+import Overlay from './Overlay';
 import { AnimatePresence } from 'framer-motion';
 
 const DEFAULT_STYLES = 'w-full fixed top-0 left-0 justify-between items-center z-10';
@@ -24,7 +25,10 @@ const Header = ({ height }) => {
         <>
             <AnimatePresence>
             {isOpen && (
-                <Drawer isOpen={isOpen} closeDrawer={closeDrawer} />
+                <>
+                    <Drawer isOpen={isOpen} closeDrawer={closeDrawer} />
+                    <Overlay closeDrawer={closeDrawer} /> 
+                </>
             )}
             </AnimatePresence>
             <DesktopHeader height={height} />
@@ -39,6 +43,7 @@ const Header = ({ height }) => {
 };
 
 const DesktopHeader = ({ height }) => {
+
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.desktop}`}>
             <Link href='/' className='font-mono text-sm min-w-max mr-8 mb-2 uppercase'>Emma Karlsson</Link>
@@ -47,11 +52,11 @@ const DesktopHeader = ({ height }) => {
     )
 };
 
-const MobileHeader = ({ height, setOpenDrawer }) => {
+const MobileHeader = ({ height, setOpenDrawer}) => {
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.mobile}`}>
             <Caption>Emma Karlsson</Caption>
-            <button onClick={() => setOpenDrawer((prev) => !prev)}>menu</button>
+            <button onClick={() => setOpenDrawer(prev => (!prev))}>menu</button>
         </header>
     )
 };
