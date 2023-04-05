@@ -11,6 +11,7 @@
 
 main, header {
     padding: 0 2rem 0 2rem;  
+    box-sizing: border-box;
 }
 
 /* 1024px = tailwind md screen value */

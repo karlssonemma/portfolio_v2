@@ -1,17 +1,16 @@
 import client from '../client';
 import { PortableText } from '@portabletext/react';
 import { motion as m } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 import Layout from '@/components/Layout';
 import Heading from '@/components/Heading';
-import Caption from '@/components/Caption';
-import Text from '@/components/Text';
 import ImageComp from '@/components/ImageComp';
+import components from '@/portableTextComponents';
 
 import CONTAINER_CLASSES from '@/components/Container';
 import { blurIn, scaleUp, slideUp } from '@/animation';
 import { HEADER_CLASSES } from '@/components/Heading';
-import { useRouter } from 'next/router';
 
 export default function About({ data }) {
 
@@ -44,14 +43,6 @@ export default function About({ data }) {
     </>
   )
 };
-
-const components = {
-  block: {
-    normal: ({children}) => <Text>{children}</Text>,
-    h4: ({children}) => <Caption>{children}</Caption>,
-    h2: ({children}) => <Text classes='text-xl'>{children}</Text>
-  }
-}
 
 export async function getStaticProps() {
   const data = await client.fetch(`

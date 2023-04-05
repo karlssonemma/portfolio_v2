@@ -5,7 +5,7 @@ import { motion as m } from 'framer-motion';
 
 import Heading, { HEADER_CLASSES, SUBTITLE_CLASSES } from '@/components/Heading';
 import Layout from '@/components/Layout';
-import Caption from '@/components/Caption';
+import Caption, { CAPTION_CLASSES } from '@/components/Caption';
 import CONTAINER_CLASSES from '@/components/Container';
 import { container, animatedItem } from '/animation';
 import { slideUp, blurIn } from '@/animation';
@@ -60,7 +60,7 @@ const ProjectLink = ({ item }) => {
         >
           {item.title}
         </m.h2>
-        <Caption>{item.caption}</Caption>
+        <p className={`${CAPTION_CLASSES}`}>{item.caption}</p>
       </Link>
     </m.li>
   );

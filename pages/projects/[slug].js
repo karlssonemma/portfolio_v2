@@ -1,4 +1,4 @@
-import Caption from '@/components/Caption';
+import Caption, { CAPTION_CLASSES } from '@/components/Caption';
 import CONTAINER_CLASSES from '@/components/Container';
 import Gallery from '@/components/Gallery';
 import Heading from '@/components/Heading';
@@ -8,12 +8,14 @@ import SkillTag from '@/components/SkillTag';
 import ImageBlock from '@/studio/schemas/imageBlock';
 import { PortableText } from '@portabletext/react';
 import Text from '@/components/Text';
+import components from '@/portableTextComponents';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import client from '../../client';
 import { motion as m } from 'framer-motion';
 import { scaleUp } from '@/animation';
+import Arrow from '@/components/Arrow';
 
 export default function ProjectsPage({ data, hasError, context }) {
 
@@ -31,7 +33,8 @@ export default function ProjectsPage({ data, hasError, context }) {
     const slugs = data.slugs;
 
     const router = useRouter();
-    console.log('DATA', slugs)
+
+    console.log('LINK', data.project)
 
     if (hasError) {
         return <h1>Error</h1>
@@ -45,11 +48,23 @@ export default function ProjectsPage({ data, hasError, context }) {
         <Layout bgColor='bg-[#E9EDC9]'>
             <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
-                <Caption>{caption}</Caption>
+                <p className={`${CAPTION_CLASSES}`}>{caption}</p>
                 <div className='my-7'>
                     <PortableText value={body} components={components} />
                 </div>
-                <article className='py-5 flex flex-wrap w-4/5'>
+                <div>
+                    {githubLink && (
+                        <a href={githubLink} target='_blank' className={`mr-4 w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}>
+                            Github<Arrow />
+                        </a>
+                    )}
+                    {projectLink && (
+                        <a href={githubLink} target='_blank' className={` w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}>
+                        Live<Arrow />
+                    </a>
+                    )}
+                </div>
+                <article className='py-7 flex flex-wrap w-4/5'>
                     {
                         tags?.map(tag => <SkillTag>{tag}</SkillTag>)
                     }
@@ -60,14 +75,6 @@ export default function ProjectsPage({ data, hasError, context }) {
         </Layout>
     )
 };
-
-const components = {
-    block: {
-      normal: ({children}) => <Text>{children}</Text>,
-      h4: ({children}) => <Caption>{children}</Caption>,
-      h2: ({children}) => <Text classes='text-xl'>{children}</Text>
-    }
-  }
 
 const NextLink = ({ slugs, currentSlug }) => {
 
@@ -81,10 +88,10 @@ const NextLink = ({ slugs, currentSlug }) => {
         nextProject = slugs[i];
     }
 
-    console.log('length', currentProjectIndex)
-
     return(
-        <Link href={`/projects/${nextProject._id}`} className='font-serif text-lg tracking-wider'>{`${nextProject.title} >>`}</Link>
+        <Link href={`/projects/${nextProject._id}`} className='font-serif text-lg tracking-wider transition border-b-2 border-dotted border-transparent hover:border-black'>
+            <Caption>{`${nextProject.title} >>`}</Caption>
+        </Link>
     )
 }
 

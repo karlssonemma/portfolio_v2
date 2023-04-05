@@ -10,7 +10,7 @@ export default function SkillTag({ children }) {
             mb-5 
             bg-teal 
             font-mono
-            text-sm
+            text-xs
             font-light 
             rounded-[30px]
         '>
