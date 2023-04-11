@@ -9,6 +9,7 @@ import Caption, { CAPTION_CLASSES } from '@/components/Caption';
 import CONTAINER_CLASSES from '@/components/Container';
 import { container, animatedItem } from '/animation';
 import { slideUp, blurIn } from '@/animation';
+import components from '@/portableTextComponents';
 
 export default function Projects({ data }) {
 
@@ -28,7 +29,7 @@ export default function Projects({ data }) {
               animate='visible'
               initial='hidden'
             >
-              <PortableText value={body} />
+              <PortableText value={body} components={components} />
             </m.div>
           </div>
         </section>

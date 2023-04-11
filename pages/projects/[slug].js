@@ -59,7 +59,7 @@ export default function ProjectsPage({ data, hasError, context }) {
                         </a>
                     )}
                     {projectLink && (
-                        <a href={githubLink} target='_blank' className={` w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}>
+                        <a href={projectLink} target='_blank' className={` w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}>
                         Live<Arrow />
                     </a>
                     )}

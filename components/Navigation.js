@@ -6,7 +6,7 @@ export default function Navigation({ closeDrawer, isOpen }) {
 
     const routes = [
         { href: '/about', label: 'about' },
-        { href: '/projects', label: 'projects' },
+        { href: '/projects', label: 'work' },
         { href: '/contact', label: 'contact' }
     ];
 
