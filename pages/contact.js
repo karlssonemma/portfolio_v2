@@ -23,6 +23,7 @@ export default function Contact({ data }) {
 };
 
 
+
 export async function getStaticProps() {
   const data = await client.fetch(`
   *[_type == "contactPage"][0]`);
