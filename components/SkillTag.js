@@ -7,7 +7,7 @@ export default function SkillTag({ children }) {
             py-3
             px-6
             mr-5
-            mb-5 
+            my-2 
             bg-transparent 
             font-mono
             text-xs

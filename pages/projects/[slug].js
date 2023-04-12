@@ -26,7 +26,7 @@ export default function ProjectsPage({ data, hasError }) {
         caption,
         gallery,
         githubLink,
-        projectLink,
+        liveLink,
         tags,
         _id
     } = data.project;
@@ -62,29 +62,36 @@ export default function ProjectsPage({ data, hasError }) {
                 <div className='my-7'>
                     <PortableText value={body} components={components} />
                 </div>
-                <div>
-                    {githubLink && (
-                        <a href={githubLink} target='_blank' className={`mr-4 w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}>
-                            Github<Arrow />
-                        </a>
-                    )}
-                    {projectLink && (
-                        <a href={projectLink} target='_blank' className={` w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}>
-                        Live<Arrow />
-                    </a>
-                    )}
-                </div>
-                <article className='py-7 flex flex-wrap w-4/5'>
-                    {
-                        tags?.map(tag => <SkillTag key={tag}>{tag}</SkillTag>)
-                    }
-                </article>
+                {(githubLink || liveLink) &&
+                    <div className='mb-7'>
+                        {githubLink && <ProjectLinks href={githubLink} label='github' />}
+                        {liveLink && <ProjectLinks href={liveLink} label='live' />}
+                    </div>
+                }
+                {tags && 
+                    <article className='flex flex-wrap w-4/5 items-center'>
+                        {tags?.map(tag => <SkillTag key={tag}>{tag}</SkillTag>)}
+                    </article>
+                }
                 <NextLink slugs={slugs} currentSlug={_id} />
             </section>
             <Gallery data={gallery} />
         </Layout>
     )
 };
+
+const ProjectLinks = ({ href, label }) => {
+    return(
+        <a 
+            href={href} 
+            target='_blank' 
+            className={`mr-4 w-max pl-[0.15em] transition border-b border-solid border-black ${CAPTION_CLASSES}`}
+        >
+            {label}
+            <Arrow />
+        </a>
+    )
+}
 
 const NextLink = ({ slugs, currentSlug }) => {
 
@@ -99,7 +106,7 @@ const NextLink = ({ slugs, currentSlug }) => {
     }
 
     return(
-        <Link href={`/projects/${nextProject._id}`} className='font-serif text-lg tracking-wider transition border-b-2 border-dotted border-transparent hover:border-black'>
+        <Link href={`/projects/${nextProject._id}`} className='font-serif text-lg tracking-wider transition border-b-2 border-dotted border-transparent hover:border-black mt-14'>
             <Caption>{`${nextProject.title} >>`}</Caption>
         </Link>
     )
@@ -119,7 +126,7 @@ export async function getStaticProps(context) {
                 'url': asset->url
             },
             githubLink,
-            projectLink,
+            liveLink,
             tags,
             _id
         },

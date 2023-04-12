@@ -29,7 +29,7 @@ export default defineType({
         // }),
         defineField({
             title: 'Live Link',
-            name: 'projectLink',
+            name: 'liveLink',
             type: 'url',
         }),
         defineField({
