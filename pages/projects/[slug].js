@@ -39,10 +39,10 @@ export default function ProjectsPage({ data, hasError, context, paths }) {
     let colors = ['bg-[#CACACC]', 'bg-[#98A683]', 'bg-[#A2ABB2]'];
     const [bgColor, setBgColor] = useState('bg-[#818F97]')
     
-    useEffect(() => {
-        let i = slugs.findIndex((slug) => slug._id === _id);
-        setBgColor(colors[i]);
-    }, [])
+    // useEffect(() => {
+    //     let i = slugs.findIndex((slug) => slug._id === _id);
+    //     setBgColor(colors[i]);
+    // }, [])
     
 
     if (hasError) {
@@ -55,7 +55,7 @@ export default function ProjectsPage({ data, hasError, context, paths }) {
 
 
     return(
-        <Layout bgColor={`${bgColor}`}>
+        <Layout bgColor={`bg-[#98A683]`}>
             <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <p className={`${CAPTION_CLASSES}`}>{caption}</p>
