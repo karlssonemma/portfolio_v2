@@ -48,7 +48,7 @@ const DesktopHeader = ({ height }) => {
 
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.desktop}`}>
-            <Link href='/' className='font-mono text-sm min-w-max mr-8 mb-2 uppercase'>Emma Karlsson</Link>
+            <Link href='/' className='font-serif text-sm min-w-max mr-16 mb-[6px] tracking-wider'>Emma Karlsson</Link>
             <Navigation />
         </header>
     )
@@ -68,14 +68,14 @@ const MobileHeader = ({ height, setOpenDrawer, isOpen }) => {
 const Burger = ({ isOpen }) => {
 
     return(
-        <m.ul className='w-6 h-6 flex flex-col justify-between'>
+        <m.ul className='w-6 h-4 flex flex-col justify-between'>
             <m.li 
                 className='w-1/2 h-[1px] bg-black' 
                 animate={{ 
                     rotate: isOpen ? 45 : 0, 
                     originY: 1, 
-                    translateX: 3, 
-                    translateY: 3 
+                    translateX: isOpen ? 2 : 0, 
+                    translateY: isOpen ? 3 : 0 
                 }}
             />
             <m.li 
@@ -90,7 +90,8 @@ const Burger = ({ isOpen }) => {
                 animate={{ 
                     rotate: isOpen ? 45 : 0, 
                     originX: 1, 
-                    translateX: -3, translateY: -2.5 
+                    translateX: isOpen ? -3 : 0, 
+                    translateY: isOpen ? 1 : 0 
                 }} 
             />
         </m.ul>
