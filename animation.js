@@ -12,7 +12,7 @@ export const blurIn = {
 }
 
 export const slideUp = {
-    hidden: { y: '130%' },
+    hidden: { y: '140%' },
     visible: (custom) => ({ 
         y: '0%',
         transition: {

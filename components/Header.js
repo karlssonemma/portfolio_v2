@@ -48,7 +48,7 @@ const DesktopHeader = ({ height }) => {
 
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.desktop}`}>
-            <Link href='/' className='font-serif text-sm min-w-max mr-16 mb-[6px] tracking-wider'>Emma Karlsson</Link>
+            <HomeLink />
             <Navigation />
         </header>
     )
@@ -57,13 +57,19 @@ const DesktopHeader = ({ height }) => {
 const MobileHeader = ({ height, setOpenDrawer, isOpen }) => {
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.mobile}`}>
-            <Caption>Emma Karlsson</Caption>
+            <HomeLink />
             <button onClick={() => setOpenDrawer(prev => (!prev))}>
                 <Burger isOpen={isOpen} />
             </button>
         </header>
     )
 };
+
+const HomeLink = () => {
+    return(
+        <Link href='/' className='font-serif text-sm min-w-max mr-16 mb-[6px] tracking-wider'>Emma Karlsson</Link>
+    )
+}
 
 const Burger = ({ isOpen }) => {
 

@@ -16,8 +16,9 @@ import client from '../../client';
 import { motion as m } from 'framer-motion';
 import { scaleUp } from '@/animation';
 import Arrow from '@/components/Arrow';
+import { useEffect, useState } from 'react';
 
-export default function ProjectsPage({ data, hasError, context }) {
+export default function ProjectsPage({ data, hasError, context, paths }) {
 
     const { 
         title,
@@ -31,10 +32,16 @@ export default function ProjectsPage({ data, hasError, context }) {
     } = data.project;
 
     const slugs = data.slugs;
-
     const router = useRouter();
 
-    console.log('LINK', data.project)
+    let colors = ['bg-[#CACACC]', 'bg-[#98A683]', 'bg-[#A2ABB2]'];
+    const [bgColor, setBgColor] = useState('bg-[#818F97]')
+    
+    useEffect(() => {
+        let i = slugs.findIndex((slug) => slug._id === _id);
+        setBgColor(colors[i]);
+    }, [])
+    
 
     if (hasError) {
         return <h1>Error</h1>
@@ -44,8 +51,9 @@ export default function ProjectsPage({ data, hasError, context }) {
         return <h1>No parameter</h1>
     }
 
+
     return(
-        <Layout bgColor='bg-[#E9EDC9]'>
+        <Layout bgColor={`${bgColor}`}>
             <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <p className={`${CAPTION_CLASSES}`}>{caption}</p>

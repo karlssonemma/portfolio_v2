@@ -27,7 +27,11 @@ module.exports = {
         black: '#161616',
         teal: '#008080',
         blue: '#103900',
-        transparent: 'transparent'
+        transparent: 'transparent',
+        'bgLanding': '#798C97',
+        'bgAbout': '#AECBB2',
+        'bgContact': '#CABCA9',
+        'bgProjects': '#B1B8A8',
       },
     },
   },

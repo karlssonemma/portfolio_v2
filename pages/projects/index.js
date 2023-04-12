@@ -20,7 +20,7 @@ export default function Projects({ data }) {
 
   return (
     <>
-      <Layout bgColor='bg-[#CCD5AE]'>
+      <Layout bgColor='bg-bgProjects'>
         <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <div className='overflow-hidden'>
