@@ -18,7 +18,7 @@ import { scaleUp } from '@/animation';
 import Arrow from '@/components/Arrow';
 import { useEffect, useState } from 'react';
 
-export default function ProjectsPage({ data, hasError, context, paths }) {
+export default function ProjectsPage({ data, hasError }) {
 
     const { 
         title,
@@ -36,8 +36,8 @@ export default function ProjectsPage({ data, hasError, context, paths }) {
     const slugs = data.slugs;
     const router = useRouter();
 
-    let colors = ['bg-[#CACACC]', 'bg-[#98A683]', 'bg-[#A2ABB2]'];
-    const [bgColor, setBgColor] = useState('bg-[#818F97]')
+    // let colors = ['bg-[#CACACC]', 'bg-[#98A683]', 'bg-[#A2ABB2]'];
+    // const [bgColor, setBgColor] = useState('bg-[#818F97]')
     
     // useEffect(() => {
     //     let i = slugs.findIndex((slug) => slug._id === _id);
