@@ -11,6 +11,8 @@ export default function Home({ data }) {
 
   const { body, title } = data;
 
+  console.log('data', data)
+
   return (
     <>
       <Layout bgColor='bg-bgLanding'>

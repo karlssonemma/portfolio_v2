@@ -23,6 +23,7 @@ export default function Gallery({ data }) {
                     animate='visible'
                     initial='hidden'
                     custom={5}
+                    key={img._key}
                 >
                     <ImageComp data={img} />
                 </m.div>

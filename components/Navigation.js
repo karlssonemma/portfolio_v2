@@ -19,7 +19,7 @@ export default function Navigation({ closeDrawer, isOpen }) {
         '>
             <div className='flex flex-col md:flex-row'>
                 {routes.map(route => 
-                    <NavLink href={route.href} closeDrawer={closeDrawer} isOpen={isOpen}>
+                    <NavLink key={route.label} href={route.href} closeDrawer={closeDrawer} isOpen={isOpen}>
                         {route.label}
                     </NavLink>
                 )}

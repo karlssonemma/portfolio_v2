@@ -31,6 +31,8 @@ export default function ProjectsPage({ data, hasError, context, paths }) {
         _id
     } = data.project;
 
+    console.log('tags', tags)
+
     const slugs = data.slugs;
     const router = useRouter();
 
@@ -74,7 +76,7 @@ export default function ProjectsPage({ data, hasError, context, paths }) {
                 </div>
                 <article className='py-7 flex flex-wrap w-4/5'>
                     {
-                        tags?.map(tag => <SkillTag>{tag}</SkillTag>)
+                        tags?.map(tag => <SkillTag key={tag}>{tag}</SkillTag>)
                     }
                 </article>
                 <NextLink slugs={slugs} currentSlug={_id} />
