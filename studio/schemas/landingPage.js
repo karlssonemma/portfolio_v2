@@ -13,6 +13,11 @@ export default {
             title: 'Body',
             name: 'body',
             type: 'richText'
-        }
+        },
+        {
+            name: 'image',
+            type: 'imageBlock',
+            title: 'Image'
+        },
     ]
 }

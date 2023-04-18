@@ -11,10 +11,7 @@ function Layout({ children, bgColor }) {
 
     return(
         <>
-            <Header 
-                height={headerHeight}
-                px={px}
-            />
+            <Header height={headerHeight} px={px} />
             <AnimatedFrame>
                 <main className={`
                     ${bgColor}

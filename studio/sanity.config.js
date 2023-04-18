@@ -4,7 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import { HomeIcon, UserIcon, EnvelopeIcon, EllipsisHorizontalIcon, SunIcon, PresentationIcon } from '@sanity/icons'
 
-const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
+const singletonActions = new Set(['publish', 'discardChanges', 'restore', 'delete']);
 const singletonTypes = new Set(['landingPage', 'aboutPage', 'contactPage', 'projectsPage']);
 
 

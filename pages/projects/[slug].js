@@ -69,7 +69,7 @@ export default function ProjectsPage({ data, hasError }) {
                     </div>
                 }
                 {tags && 
-                    <article className='flex flex-wrap w-4/5 items-center'>
+                    <article className='flex flex-wrap w-4/5 md:w-full items-center'>
                         {tags?.map(tag => <SkillTag key={tag}>{tag}</SkillTag>)}
                     </article>
                 }
@@ -106,8 +106,8 @@ const NextLink = ({ slugs, currentSlug }) => {
     }
 
     return(
-        <Link href={`/projects/${nextProject._id}`} className='font-serif text-lg tracking-wider transition border-b-2 border-dotted border-transparent hover:border-black mt-14'>
-            <Caption>{`${nextProject.title} >>`}</Caption>
+        <Link href={`/projects/${nextProject._id}`} className='transition border-b-2 border-dotted border-transparent hover:border-black mt-14'>
+            <Caption>{`${nextProject.title} »`}</Caption>
         </Link>
     )
 }

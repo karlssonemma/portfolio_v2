@@ -2,7 +2,7 @@ import CONTAINER_CLASSES from './Container'
 import ImageComp from './ImageComp'
 
 import { motion as m } from 'framer-motion';
-import { blurIn, scaleUp, slideUp } from '@/animation';
+import { blurIn } from '@/animation';
 
 export default function Gallery({ data }) {
 
@@ -10,7 +10,8 @@ export default function Gallery({ data }) {
         <section className={`
                 ${CONTAINER_CLASSES} 
                 md:w-3/5
-                md:h-screen
+                md:min-h-screen
+                md:h-[1000px]
                 md:-translate-y-40
                 md:overflow-scroll
                 hide-scrollbar
