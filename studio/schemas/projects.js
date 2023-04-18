@@ -22,11 +22,6 @@ export default defineType({
             name: 'body',
             type: 'richText'
         }),
-        // defineField({
-        //     name: 'slug',
-        //     title: 'Slug',
-        //     type: 'string',
-        // }),
         defineField({
             title: 'Live Link',
             name: 'liveLink',
@@ -37,34 +32,6 @@ export default defineType({
             name: 'githubLink',
             type: 'url',
         }),
-        // not sure if neccessary with fieldsets here? coming back.
-        // defineField({
-        //     name: 'websiteLinks',
-        //     type: 'object',
-        //     fieldsets: [
-        //         {
-        //             name: 'links', 
-        //             title: 'Website Links',
-        //             options: {
-        //                 collapsable: true
-        //             }
-        //         }
-        //     ],
-        //     fields: [
-        //         {
-        //             title: 'Live Link',
-        //             name: 'liveLink',
-        //             type: 'url',
-        //             fieldset: 'links'
-        //         },
-        //         {
-        //             title: 'Github Link',
-        //             name: 'githubLink',
-        //             type: 'url',
-        //             fieldset: 'links'
-        //         },
-        //     ]
-        // }),
         defineField({
             title: 'Gallery',
             name: 'gallery',
@@ -76,7 +43,16 @@ export default defineType({
             name: 'tags',
             type: 'array',
             of: [{type: 'string'}]
-        })
+        }),
+        defineField({
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            options: {
+                source: (doc) => doc.title,
+                maxLength: 200
+            }
+    })
         
     ]
 })

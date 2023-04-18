@@ -8,7 +8,7 @@ const Drawer = ({ isOpen, closeDrawer }) => {
     return(
 
         <m.div 
-            className={`w-4/5 h-screen bg-teal fixed top-0 left-0 z-20 p-mobile`}
+            className={`w-4/5 h-screen bg-[#CF775E] fixed top-0 left-0 z-20 p-mobile`}
             key='drawer'
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}

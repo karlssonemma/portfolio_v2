@@ -16,6 +16,7 @@ export default function Navigation({ closeDrawer, isOpen }) {
                 justify-between items-start md:items-center
                 w-full h-full 
                 pl-2
+                text-black
         '>
             <div className='flex flex-col md:flex-row'>
                 {routes.map(route => 

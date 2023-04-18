@@ -15,9 +15,9 @@ export default {
             type: 'richText'
         },
         {
+            title: 'Image',
             name: 'image',
             type: 'imageBlock',
-            title: 'Image'
-        },
+        }
     ]
 }

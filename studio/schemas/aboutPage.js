@@ -21,6 +21,5 @@ export default {
             type: 'imageBlock',
             title: 'Image'
         },
-
     ]
 }

@@ -4,11 +4,12 @@ import Link from 'next/link';
 import client from '../client';
 
 import { blurIn, slideUp } from '@/animation';
-import Caption from '@/components/Caption';
+import { CAPTION_CLASSES } from '@/components/Caption';
 import Heading from '@/components/Heading';
 import ImageComp from '@/components/ImageComp';
 import Layout from '@/components/Layout';
 import components from '@/portableTextComponents';
+import InternalLink from '@/components/InternalLink';
 
 export default function Home({ data }) {
 
@@ -30,8 +31,8 @@ export default function Home({ data }) {
             >
              <PortableText value={body} components={components} />
              <div className='mt-10'>
-              <CtaLink href='/about'>About me »</CtaLink>
-              <CtaLink href='/about'>My work »</CtaLink>
+              <InternalLink href='/about'>Get to know me »</InternalLink>
+              <InternalLink href='/about'>My work »</InternalLink>
              </div>
             </m.div>
           </m.div>
@@ -52,17 +53,6 @@ export default function Home({ data }) {
     </>
   )
 };
-
-const CtaLink = ({ href, children }) => {
-  return(
-    <Link 
-      href={href}
-      className='block w-max transition border-b-2 border-dotted border-transparent hover:border-black mb-2'
-    >
-      <Caption>{children}</Caption>
-    </Link>
-  )
-}
 
 export async function getStaticProps() {
   const data = await client.fetch(`

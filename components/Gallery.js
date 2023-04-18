@@ -19,7 +19,7 @@ export default function Gallery({ data }) {
             <div className='md:pt-36'>
             {data?.map(img => 
                 <m.div 
-                    className='snap-start w-full h-auto pb-10'
+                    className='snap-start w-full h-auto pb-8'
                     variants={blurIn}
                     animate='visible'
                     initial='hidden'

@@ -52,7 +52,7 @@ export default function Projects({ data }) {
 const ProjectLink = ({ item }) => {
   return(
     <m.li className='mb-12'>
-      <Link href={`projects/${item._id}`}>
+      <Link href={`projects/${item.slug.current}`}>
         <m.h2 
           className={`${SUBTITLE_CLASSES} hover:italic`}
           whileHover={{ x: 3 }}
@@ -78,6 +78,7 @@ export async function getStaticProps() {
         title,
         caption,
         _id,
+        slug
       }
     }
   `);
