@@ -17,7 +17,9 @@ export default {
                     { title: 'Emphasis', value: 'em' },
                 ]
             },
-            lists: []
+            lists: [
+                { title: 'Bullet', value: 'bullet' }
+            ]
 
         }
     ]

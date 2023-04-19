@@ -1,15 +1,23 @@
 import Text from './components/Text';
-import Caption from './components/Caption';
+import { CAPTION_CLASSES } from './components/Caption';
 import Arrow from './components/Arrow';
+import ExternalLink from './components/ExternalLink';
 
 const components = {
     block: {
       normal: ({children}) => <Text>{children}</Text>,
-      h4: ({children}) => <Caption>{children}</Caption>,
+      h4: ({children}) => <p className={`${CAPTION_CLASSES} mb-3`}>{children}</p>,
       h2: ({children}) => <Text classes='text-xl'>{children}</Text>
     },
     marks: {
-      link: ({children, value}) => <a href={value?.href} target='_blank' className='font-mono text-xs tracking-[.2em] uppercase pl-[0.15em] transition border-b border-solid border-black'>{children}<Arrow /></a>
+      link: ({children, value}) => 
+      <ExternalLink href={value?.href}>{children}</ExternalLink>
+    },
+    list: {
+      bullet: ({children}) => <ul>{children}</ul>
+    },
+    listItem: {
+      bullet: ({children}) => <li><Text>{children}</Text></li>
     }
 };
 

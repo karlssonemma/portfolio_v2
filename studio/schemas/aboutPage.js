@@ -21,5 +21,10 @@ export default {
             type: 'imageBlock',
             title: 'Image'
         },
+        {
+            name: 'cv',
+            type: 'file',
+            title: 'CV',
+        }
     ]
 }

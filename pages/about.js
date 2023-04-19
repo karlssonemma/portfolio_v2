@@ -1,7 +1,6 @@
 import client from '../client';
 import { PortableText } from '@portabletext/react';
 import { motion as m } from 'framer-motion';
-import { useRouter } from 'next/router';
 
 import Layout from '@/components/Layout';
 import Heading from '@/components/Heading';
@@ -9,17 +8,12 @@ import ImageComp from '@/components/ImageComp';
 import components from '@/portableTextComponents';
 
 import CONTAINER_CLASSES from '@/components/Container';
-import { blurIn, scaleUp, slideUp } from '@/animation';
-import { HEADER_CLASSES } from '@/components/Heading';
+import { scaleUp } from '@/animation';
+
 
 export default function About({ data }) {
 
-  const { body, title, image } = data;
-
-  console.log('ABOut', data)
-  const router = useRouter()
-  console.log('ROUTWR', router)
-
+  const { body, title, image, cv } = data;
 
   return (
     <>
@@ -52,7 +46,8 @@ export async function getStaticProps() {
     'image': {
       'altText': image.altText,
       'url': image.asset->url
-    }
+    },
+    'cv': cv.asset->url
   }`);
 
   return {

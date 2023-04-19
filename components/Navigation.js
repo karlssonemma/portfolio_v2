@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Caption, { CAPTION_CLASSES } from './Caption';
 import { useRouter } from 'next/router';
+import ExternalLink from './ExternalLink';
 
 export default function Navigation({ closeDrawer, isOpen }) {
 
@@ -25,9 +26,7 @@ export default function Navigation({ closeDrawer, isOpen }) {
                     </NavLink>
                 )}
             </div>
-            <a href='mailto:karlssonemma93@gmail.com'>
-                <p className={`${CAPTION_CLASSES} border-b border-solid border-black`}>karlssonemma93@gmail.com</p>
-            </a>
+            <ExternalLink href='mailto:karlssonemma93@gmail.com'>karlssonemma93@gmail.com</ExternalLink>
         </nav>
     )
 };
