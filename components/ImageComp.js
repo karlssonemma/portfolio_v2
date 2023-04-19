@@ -6,9 +6,10 @@ export default function ImageComp({ data, round }) {
         <Image 
             className={`w-full object-contain ${round && 'rounded-[100%]'}`}
             src={data.url}
-            width={800}
-            height={800}
+            width={500}
+            height={500}
             alt={data.altText}
+            priority='true'
         />
     )
 }

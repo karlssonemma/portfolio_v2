@@ -58,7 +58,7 @@ const MobileHeader = ({ height, setOpenDrawer, isOpen }) => {
     return(
         <header className={`${height} ${DEFAULT_STYLES} ${VARIANT_STYLES.mobile}`}>
             <HomeLink />
-            <button onClick={() => setOpenDrawer(prev => (!prev))}>
+            <button onClick={() => setOpenDrawer(prev => (!prev))} name='Open menu'>
                 <Burger isOpen={isOpen} />
             </button>
         </header>

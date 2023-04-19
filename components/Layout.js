@@ -14,6 +14,8 @@ function Layout({ children, bgColor, title }) {
         <>
             <Head>
                 <title>Emma Karlsson · {title}</title>
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+
             </Head>
             <Header height={headerHeight} px={px} />
             <AnimatedFrame>
