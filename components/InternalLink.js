@@ -8,7 +8,7 @@ const InternalLink = ({ href, children }) => {
             href={href}
             className='block w-max transition border-b-2 border-dotted border-transparent hover:border-black mb-3'
         >
-        <p className={`${CAPTION_CLASSES}`}>{children}</p>
+        <p className={`${CAPTION_CLASSES}`}>{children} »</p>
       </Link>
     )
 }

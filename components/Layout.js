@@ -1,7 +1,6 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Header from './Header';
-import { motion as m, AnimatePresence } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 
 
 let px = 'px-8 lg:px-32'
@@ -14,7 +13,7 @@ function Layout({ children, bgColor, title }) {
         <>
             <Head>
                 <title>Emma Karlsson · {title}</title>
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+                <link rel='icon' type='image/png' sizes='32x32' href='/favicon.png' />
 
             </Head>
             <Header height={headerHeight} px={px} />

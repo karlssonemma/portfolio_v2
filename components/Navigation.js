@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Caption, { CAPTION_CLASSES } from './Caption';
+import { CAPTION_CLASSES } from './Caption';
 import { useRouter } from 'next/router';
 import ExternalLink from './ExternalLink';
 

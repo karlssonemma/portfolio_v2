@@ -30,6 +30,7 @@ module.exports = {
         'bgAbout': '#EAB97B',
         'bgContact': '#E9DA9E',
         'bgProjects': '#9DBE8B',
+        'bgNotFound': '#C5EFCB'
       },
     },
   },

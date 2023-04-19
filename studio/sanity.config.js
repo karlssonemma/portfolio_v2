@@ -2,7 +2,8 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import { HomeIcon, UserIcon, EnvelopeIcon, EllipsisHorizontalIcon, SunIcon, PresentationIcon } from '@sanity/icons'
+import { UserIcon, EnvelopeIcon, EllipsisHorizontalIcon, SunIcon, PresentationIcon } from '@sanity/icons'
+import { colorInput } from '@sanity/color-input'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore', 'delete']);
 const singletonTypes = new Set(['landingPage', 'aboutPage', 'contactPage', 'projectsPage']);
@@ -58,7 +59,7 @@ export default defineConfig({
             ),
           S.documentTypeListItem('projects').title('Projects').icon(EllipsisHorizontalIcon),
         ])
-  }), visionTool()],
+  }), visionTool(), colorInput()],
 
   schema: {
     types: schemaTypes,

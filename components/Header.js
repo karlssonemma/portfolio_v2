@@ -4,7 +4,6 @@ import { AnimatePresence } from 'framer-motion';
 import { motion as m } from 'framer-motion'
 
 import Navigation from './Navigation';
-import Caption from './Caption';
 import Drawer from './Drawer';
 import Overlay from './Overlay';
 

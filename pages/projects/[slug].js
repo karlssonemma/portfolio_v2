@@ -13,6 +13,7 @@ import client from '../../client';
 import { motion as m } from 'framer-motion';
 import Arrow from '@/components/Arrow';
 import InternalLink from '@/components/InternalLink';
+import NotFound from '../404';
 
 export default function ProjectsPage({ data, hasError }) {
 
@@ -24,34 +25,28 @@ export default function ProjectsPage({ data, hasError }) {
         githubLink,
         liveLink,
         tags,
-        _id
+        _id,
+        backgroundColor
     } = data.project;
-
-    console.log('tags', data)
 
     const slugs = data.slugs;
     const router = useRouter();
 
-    // let colors = ['bg-[#CACACC]', 'bg-[#98A683]', 'bg-[#A2ABB2]'];
-    // const [bgColor, setBgColor] = useState('bg-[#818F97]')
-    
-    // useEffect(() => {
-    //     let i = slugs.findIndex((slug) => slug._id === _id);
-    //     setBgColor(colors[i]);
-    // }, [])
+    console.log('color', backgroundColor)
+    const color = `bg-[${backgroundColor.hex}]`
     
 
     if (hasError) {
-        return <h1>Error</h1>
+        return <NotFound />
     }
 
     if (router.isFallback) {
-        return <h1>No parameter</h1>
+        return <NotFound />
     }
 
 
     return(
-        <Layout bgColor={`bg-[#A2ABB2]`} title={title}>
+        <Layout bgColor={color} title={title}>
             <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <p className={`${CAPTION_CLASSES}`}>{caption}</p>
@@ -103,7 +98,7 @@ const NextLink = ({ slugs, currentSlug }) => {
 
     return(
         <InternalLink href={`/projects/${nextProject.slug.current}`}>
-            {`${nextProject.title} »`}
+            {`${nextProject.title}`}
         </InternalLink>
     )
 }
@@ -125,7 +120,8 @@ export async function getStaticProps(context) {
             liveLink,
             tags,
             _id,
-            slug
+            slug,
+            'backgroundColor': backgroundColor.hex
         },
         'slugs':  *[_type == 'projects']{
             title,

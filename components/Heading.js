@@ -8,7 +8,6 @@ export const SUBTITLE_CLASSES = `${DEFAULT_CLASSES} text-6xl`;
 
 function Heading({ size, children, as }) {
 
-
     switch (size) {
         case 'h1':
             return (
