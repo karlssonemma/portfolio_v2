@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Header from './Header';
 import { motion as m, AnimatePresence } from 'framer-motion';
 
@@ -7,10 +8,13 @@ let px = 'px-8 lg:px-32'
 let headerHeight = 'h-16';
 let top = 'top-16';
 
-function Layout({ children, bgColor }) {
+function Layout({ children, bgColor, title }) {
 
     return(
         <>
+            <Head>
+                <title>Emma Karlsson · {title}</title>
+            </Head>
             <Header height={headerHeight} px={px} />
             <AnimatedFrame>
                 <main className={`

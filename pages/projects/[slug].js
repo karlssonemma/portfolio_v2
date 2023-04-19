@@ -51,7 +51,7 @@ export default function ProjectsPage({ data, hasError }) {
 
 
     return(
-        <Layout bgColor={`bg-[#A2ABB2]`}>
+        <Layout bgColor={`bg-[#A2ABB2]`} title={title}>
             <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <p className={`${CAPTION_CLASSES}`}>{caption}</p>

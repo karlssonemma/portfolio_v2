@@ -19,7 +19,7 @@ export default function Home({ data }) {
 
   return (
     <>
-      <Layout bgColor='bg-bgLanding'>
+      <Layout bgColor='bg-bgLanding' title={title}>
         <section className='max-h-screen w-full md:w-1/2 lg:w-2/5 h-full md:self-center'>
           <Heading size='h1'>{title}</Heading>
           <m.div className='h-max overflow-hidden'>

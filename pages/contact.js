@@ -12,7 +12,7 @@ export default function Contact({ data }) {
 
   return (
     <>
-      <Layout bgColor='bg-bgContact'>
+      <Layout bgColor='bg-bgContact' title={title}>
         <section className={`${CONTAINER_CLASSES}`}>
           <Heading size='h1'>{title}</Heading>
           <PortableText value={body} components={components} />

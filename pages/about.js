@@ -17,7 +17,7 @@ export default function About({ data }) {
 
   return (
     <>
-      <Layout bgColor='bg-bgAbout'>
+      <Layout bgColor='bg-bgAbout' title={title}>
         <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
           <Heading size='h1'>{title}</Heading>
           <m.div>
