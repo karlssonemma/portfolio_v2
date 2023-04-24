@@ -33,7 +33,8 @@ export default function ProjectsPage({ data, hasError }) {
     const router = useRouter();
 
     console.log('color', backgroundColor)
-    const color = `bg-[${backgroundColor.hex}]`
+    
+
     
 
     if (hasError) {
@@ -46,7 +47,7 @@ export default function ProjectsPage({ data, hasError }) {
 
 
     return(
-        <Layout bgColor={color} title={title}>
+        <Layout bgColor={backgroundColor} title={title}>
             <section className={`${CONTAINER_CLASSES} md:w-2/5`}>
                 <Heading size='h1'>{title}</Heading>
                 <p className={`${CAPTION_CLASSES}`}>{caption}</p>
@@ -121,7 +122,7 @@ export async function getStaticProps(context) {
             tags,
             _id,
             slug,
-            'backgroundColor': backgroundColor.hex
+            'backgroundColor': 'bg-['+backgroundColor.hex+']'
         },
         'slugs':  *[_type == 'projects']{
             title,
