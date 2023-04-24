@@ -29,7 +29,7 @@ function Layout({ children, bgColor, title }) {
                     gap-32
                     pt-44
                     pb-12
-                `}>
+                `} style={{ backgroundColor: `${bgColor}` }}>
                     {children}
                 </main>
             </AnimatedFrame>

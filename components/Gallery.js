@@ -15,8 +15,9 @@ export default function Gallery({ data }) {
                 md:-translate-y-40
                 md:overflow-scroll
                 hide-scrollbar
+                
                 `}>
-            <div className='md:pt-36'>
+            <div className='md:pt-36 w-full'>
             {data?.map(img => 
                 <m.div 
                     className='snap-start w-full h-auto pb-8'

@@ -33,9 +33,7 @@ export default function ProjectsPage({ data, hasError }) {
     const router = useRouter();
 
     console.log('color', backgroundColor)
-    
-
-    
+  
 
     if (hasError) {
         return <NotFound />
@@ -122,7 +120,7 @@ export async function getStaticProps(context) {
             tags,
             _id,
             slug,
-            'backgroundColor': 'bg-['+backgroundColor.hex+']'
+            'backgroundColor': backgroundColor.hex
         },
         'slugs':  *[_type == 'projects']{
             title,
