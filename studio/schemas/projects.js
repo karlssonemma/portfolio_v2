@@ -57,6 +57,7 @@ export default {
             title: 'Background Color',
             name: 'backgroundColor',
             type: 'color',
+            validation: Rule => Rule.required()
         }
         
     ]
