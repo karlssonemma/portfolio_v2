@@ -32,7 +32,7 @@ export default function Home({ data }) {
              <PortableText value={body} components={components} />
              <div className='mt-10'>
               <InternalLink href='/about'>Get to know me</InternalLink>
-              <InternalLink href='/about'>My work</InternalLink>
+              <InternalLink href='/projects'>My work</InternalLink>
              </div>
             </m.div>
           </m.div>
