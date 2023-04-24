@@ -13,7 +13,7 @@ export default function NotFound() {
       <Layout bgColor='bg-bgNotFound' title='404'>
         <section>
             <Heading size='h1'>404 - Not found</Heading>
-            <Text>We couldn't find the page you were looking for. Try one of these links instead:</Text>
+            <Text>The page you were looking for was not found. Try one of these links instead:</Text>
             <div className='mt-8'>
                 <InternalLink href='/about'>About me</InternalLink>
                 <InternalLink href='/projects'>Work</InternalLink>
