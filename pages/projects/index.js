@@ -48,7 +48,7 @@ export default function Projects({ data }) {
     </>
   )
 };
-
+ 
 const ProjectLink = ({ item }) => {
   return(
     <m.li className='mb-12'>
