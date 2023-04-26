@@ -54,7 +54,7 @@ const ProjectLink = ({ item }) => {
     <m.li className='mb-12'>
       <Link href={`projects/${item.slug.current}`}>
         <m.h2 
-          className={`${SUBTITLE_CLASSES} hover:italic border-b-2 border-black border-dotted`}
+          className={`${SUBTITLE_CLASSES} w-auto hover:italic border-b-2 border-black border-dotted`}
           whileHover={{ x: 3 }}
           initial={{ x: 0 }}
           transition={{ ease: 'easeInOut', duration: .2 }}
