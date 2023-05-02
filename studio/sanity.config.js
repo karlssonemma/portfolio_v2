@@ -12,6 +12,7 @@ const singletonTypes = new Set(['landingPage', 'aboutPage', 'contactPage', 'proj
 export default defineConfig({
   name: 'default',
   title: 'portfolio',
+  basePath: '/studio',
 
   projectId: '3pnqik0t',
   dataset: 'production',
