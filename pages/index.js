@@ -1,10 +1,8 @@
 import { PortableText } from '@portabletext/react';
 import { motion as m } from 'framer-motion';
-import Link from 'next/link';
 import client from '../client';
 
 import { blurIn, slideUp } from '@/animation';
-import { CAPTION_CLASSES } from '@/components/Caption';
 import Heading from '@/components/Heading';
 import ImageComp from '@/components/ImageComp';
 import Layout from '@/components/Layout';
@@ -14,8 +12,6 @@ import InternalLink from '@/components/InternalLink';
 export default function Home({ data }) {
 
   const { body, title, image } = data;
-
-  console.log('homepage', data)
 
   return (
     <>

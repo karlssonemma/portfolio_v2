@@ -1,7 +1,3 @@
-import { motion as m } from 'framer-motion';
-
-
-import { blurIn, slideUp } from '@/animation';
 import Heading from '@/components/Heading';
 import Layout from '@/components/Layout';
 import InternalLink from '@/components/InternalLink';

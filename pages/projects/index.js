@@ -3,11 +3,10 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 
-import Heading, { HEADER_CLASSES, SUBTITLE_CLASSES } from '@/components/Heading';
+import Heading, { SUBTITLE_CLASSES } from '@/components/Heading';
 import Layout from '@/components/Layout';
-import Caption, { CAPTION_CLASSES } from '@/components/Caption';
+import { CAPTION_CLASSES } from '@/components/Caption';
 import CONTAINER_CLASSES from '@/components/Container';
-import { container, animatedItem } from '/animation';
 import { slideUp, blurIn } from '@/animation';
 import components from '@/portableTextComponents';
 
@@ -15,8 +14,6 @@ export default function Projects({ data }) {
 
   const { pageData, slugs } = data;
   const { body, title } = pageData;
-
-  console.log('projects', data)
 
   return (
     <>

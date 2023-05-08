@@ -8,9 +8,7 @@ import { PortableText } from '@portabletext/react';
 import components from '@/portableTextComponents';
 
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import client from '../../client';
-import { motion as m } from 'framer-motion';
 import Arrow from '@/components/Arrow';
 import InternalLink from '@/components/InternalLink';
 import NotFound from '../404';
@@ -30,10 +28,7 @@ export default function ProjectsPage({ data, hasError }) {
     } = data.project;
 
     const slugs = data.slugs;
-    const router = useRouter();
-
-    console.log('color', backgroundColor)
-  
+    const router = useRouter();  
 
     if (hasError) {
         return <NotFound />
